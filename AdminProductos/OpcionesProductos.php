@@ -53,7 +53,6 @@ a:active {
     
     <a href="">Editar un libro</a>
     <a href="">Eliminar un libro</a>
-    <a href=""></a>
 </body>
 
 </html>
