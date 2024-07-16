@@ -13,7 +13,8 @@
 
 <style>
 body {
-   background: #E8D0DD;
+   background: #FFFFFF; /*BORRAR ESTE CODIGO D PRUEBA */
+   /* background: #E8D0DD; */
 }
 
 a {
