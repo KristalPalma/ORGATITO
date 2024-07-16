@@ -13,7 +13,6 @@
 
 <style>
 body {
-   background: #FFFFFF;
    background: #E8D0DD;
 }
 
