@@ -12,9 +12,6 @@
 
 
 <style>
-body {
-   background: #E8D0DD;
-}
 
 a {
   outline: none;
