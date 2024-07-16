@@ -1,0 +1,28 @@
+:root {
+    /*Colores de texto*/
+    --text: #F3F3F3;
+    --subtext: #CECECE;
+    /*background*/
+    --background: #202020;
+    /*color principal de las interfaces*/
+    --main: #161616;
+    --main-elevated: #232323;
+    --highlight: #2A2A2A;
+    --highlight-elevated: #292929;
+    --card: #303030;
+    --shadow: #252525;
+    --selected-row: #CECECE;
+    /*colores alternativos para los botones*/
+    --button: #3281EA;
+    --button-active: #0284E8;
+    --button-disabled: #303030;
+    /*scrollbar*/
+    --scrollbar: #FFFFFF25;
+    --scrollbar-hover: #FFFFFF50;
+    --scrollbar-highligth: #FFFFFF75;
+    /*colores extra*/
+    --notification: #3281EA;
+    --notification-error: #F05454;
+    --notification-warning: #FFD369;
+    --notification-confirm: #BEF992;
+}
