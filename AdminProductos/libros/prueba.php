@@ -12,18 +12,6 @@
 
 
 <style>
-
-a {
-  outline: none;
-  text-decoration:none;
-  display: inline-block;
-  width: 19.5%;
-  margin-right: 0.15%;
-  text-align: center;
-  line-height: 3;
-  color: black;
-}
-
 a:link {
   color: purple;
 }
