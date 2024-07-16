@@ -5,47 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administradore</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-
-
-<style>
-body {
-   background: #E8D0DD;
-}
-
-a {
-  outline: none;
-  text-decoration:none;
-  display: inline-block;
-  width: 19.5%;
-  margin-right: 0.15%;
-  text-align: center;
-  line-height: 3;
-  color: black;
-}
-
-a:link {
-  color: purple;
-}
-
-a:link,
-a:focus {
-  background: #D4E8D0;
-}
-
-a:hover {
-  background: #D0E8E3;
-}
-
-a:active {
-  background: pink;
-  color: purple;
-}
-
-</style>
 
     <h1>Opciones</h1>
     <a href="libros/crear.php"></a>
