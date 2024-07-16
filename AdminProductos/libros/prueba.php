@@ -46,7 +46,7 @@ a:active {
 
     <h1>Opciones</h1>
     <a href="libros/crear.php"></a>
-    <a href="libros/mensaje_error.php">mensaje un libro</a>
+    <a href="libros/mensaje_error.php">mensaje_error</a>
     
     <a href="">Editar un libro</a>
     <a href="">Eliminar un libro</a>
