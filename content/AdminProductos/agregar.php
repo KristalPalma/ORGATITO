@@ -58,8 +58,8 @@ if (mysqli_query($conexion, $peticionInsertar)) {
 
          <label for="">TIPO</label>
         <select name ="tipo" >
-            <option value = "">Verdura</option>
-            <option value = "">Fruta</option>
+            <option value = "Verdura">Verdura</option>
+            <option value = "Fruta">Fruta</option>
         </select>
 
         <label for="">NOMBRE DEL PRODUCTO</label>
@@ -76,9 +76,9 @@ if (mysqli_query($conexion, $peticionInsertar)) {
         <input type="int" name="promocion">
 
         <label for="">TIPO DE ENTREGA</label>
-        <select name ="tipo" >
-            <option value = "">Local</option>
-            <option value = "">Domicilio</option>
+        <select name ="entrega" >
+            <option value = "Local">Local</option>
+            <option value = "Domicilio">Domicilio</option>
         </select>       
 
         <label for="">PROVEEDOR</label>
