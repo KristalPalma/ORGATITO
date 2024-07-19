@@ -2,8 +2,6 @@
     /*Colores de texto*/
     --text: #F3F3F3;
     --subtext: #CECECE;
-    /*background*/
-    --background: #202020;
     /*color principal de las interfaces*/
     --main: #161616;
     --main-elevated: #232323;
@@ -25,4 +23,33 @@
     --notification-error: #F05454;
     --notification-warning: #FFD369;
     --notification-confirm: #BEF992;
+
+    /*FORMA*/
+    .principal-btn {
+        background-color: #acf5ac;   /*COLOR FINAL: BOTON PRINCIPAL*/
+        color: rgb(4, 3, 3);
+        padding: 10px;
+        border-radius: 10px; /*bordes redondos*/
+        border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        font-family: 'Georgia'; 
+      }
+
+      .principal-btn:active{
+        background: #F4F7B7; /*COLOR FINAL?*/
+        transform: scale(0.10); 
+      }
+
+      .principal-btn:hover{
+        background: #8ceb88; /*COLOR FINAL? boton CURSOR*/
+      }
+
+
+
+      /*texto*/
+  
+        background: #f1efc9; /*COLOR FONDO FINAL f1efc9*/
+ 
+      
 }
