@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="registro-container">
+  <h2>ORGATITO </h2>
+  <h3>Regístrate</h3>
+  <form action="procesar_login.php" method="post">
+    <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+    <select id="tipoUsuario" name="tipoUsuario" required>
+      <option value="">Seleccionar tipo de usuario</option>
+      <option value="cliente">Cliente</option>
+      <option value="proveedor">Proveedor</option>
+      <option value="administrador">Administrador</option>
+    </select>
+    <input type="submit" value="Registrarse">
+  </form>
+  <a href="index.html">¿Ya tienes una cuenta? Inicia sesión aquí</a>
+</div>
+
+</body>
+</html>
