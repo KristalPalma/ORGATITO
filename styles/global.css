@@ -33,7 +33,7 @@
         border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
         transition: transform 0.3s ease-in-out;
         cursor: pointer;
-        font-family: 'Georgia'; 
+        font-family: 'Lucida Console'; 
       }
 
       .principal-btn:active{
@@ -48,8 +48,13 @@
 
 
       /*texto*/
-      .btn{
+
+      .h1_rosa {
+        font-family: 'Lucida Console' ;
+        color:#f159fc
+      }
+      
+  
         background: #f1efc9; /*COLOR FONDO FINAL f1efc9*/
       }
       
-}
