@@ -1,0 +1,71 @@
+/* Login Form Styles */
+.login-container {
+    width: 400px; /* Adjust width as needed */
+    margin: 50px auto; /* Center the form horizontally */
+    padding: 30px;
+    border: 1px solid #ddd; /* Add a thin border */
+    border-radius: 5px; /* Add rounded corners */
+    background-color: #fff;
+  }
+  
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px; /* Adjust font size as needed */
+  }
+  
+  .login-container h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 18px; /* Adjust font size as needed */
+  }
+  
+  .login-container form {
+    display: flex; /* Arrange form elements vertically */
+    flex-direction: column; /* Stack elements on top */
+    margin-bottom: 20px;
+  }
+  
+  .login-container form input,
+  .login-container form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .login-container form input[type="submit"] {
+    background-color: #337ab7; /* Primary Color */
+    color: #fff;
+    padding: 12px 20px; /* Adjust padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-container form input[type="submit"]:hover {
+    background-color: #286090; /* Darker Primary Color on hover */
+  }
+  
+  .login-container form a {
+    color: #333; /* Text Color */
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .login-container form a:hover {
+    color: #337ab7; /* Primary Color on hover */
+  }
+  
+  .login-container form .remember-me {
+    display: flex; /* Arrange checkbox and label horizontally */
+    align-items: center; /* Align checkbox and label vertically */
+    margin-bottom: 10px;
+  }
+  
+  .login-container form .remember-me input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
