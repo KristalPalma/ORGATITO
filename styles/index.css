@@ -1,32 +1,131 @@
+/* General Styles */
 body {
-    background: #E8D0DD;
- }
- 
- a {
-   outline: none;
-   text-decoration:none;
-   display: inline-block;
-   width: 19.5%;
-   margin-right: 0.15%;
-   text-align: center;
-   line-height: 3;
-   color: black;
- }
- 
- a:link {
-   color: purple;
- }
- 
- a:link,
- a:focus {
-   background: #D4E8D0;
- }
- 
- a:hover {
-   background: #D0E8E3;
- }
- 
- a:active {
-   background: pink;
-   color: purple;
- }
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333; /* Text Color */
+}
+
+.container {
+  max-width: 98%;
+  margin: 0 auto;
+  padding: 1px;
+  display: flex; /* Use flexbox for positioning */
+  justify-content: space-between; /* Distribute space between logo and nav */
+  align-items: center; /* Align logo and nav vertically */
+}
+
+/* Header Styles */
+header {
+  background-color: #BCDFF2;
+  padding: 1px 0;
+}
+
+header img {
+  width: 80px; /* Adjust as needed */
+  height: auto;
+}
+
+header h1 {
+  font-size: 24px; /* Adjust as needed */
+  margin-bottom: 2px;
+}
+
+header p {
+  font-size: 16px; /* Adjust as needed */
+  line-height: 1.5;
+}
+
+/* Navigation Styles */
+.container nav {
+  display: flex; /* Use flexbox for positioning nav items */
+}
+
+.container nav ul {
+  list-style: none; /* Remove default bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flexbox for positioning links */
+}
+
+.container nav li {
+  margin-left: 10px; /* Spacing between nav items */
+}
+
+.container nav a {
+  display: block; /* Make links display as block elements */
+  padding: 5px 10px; /* Adjust padding as needed */
+  text-decoration: none;
+  color: #333; /* Link text color */
+  font-weight: bold; /* Make link text bold */
+}
+
+.container nav a:hover {
+  background-color: #e8f0fe; /* Light Blue background on hover */
+  color: #337ab7; /* Primary Color on hover */
+}
+
+/* Hero Section Styles */
+.hero {
+  background-color: #F2ECA8; /* Light Blue Background */
+  padding: 50px 0;
+  text-align: center;
+  position: relative; /* For Hero Image Overlay */
+}
+
+.hero-content {
+  position: relative; /* For Hero Image Overlay */
+  z-index: 1; /* Ensure Hero Content is above Hero Image */
+}
+
+.hero-content h2 {
+  font-size: 36px; /* Adjust as needed */
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px; /* Adjust as needed */
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-content a.btn-primary {
+  background-color: #F2ECA8; /* Primary Color */
+  color: #fff;
+  padding: 12px 20px; /* Adjust as needed */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.hero-content a.btn-primary:hover {
+  background-color: #F2ECA8; /* Darker Primary Color on hover */
+}
+
+.hero-image {
+  position: absolute; /* Position Hero Image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5; /* Adjust opacity for overlay effect */
+}
+
+/* Products Section Styles */
+.products {
+  padding: 50px 0;
+}
+
+.products h2 {
+  font-size: 28px; /* Adjust as needed */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust as needed */
+}  
