@@ -48,8 +48,19 @@
 
 
       /*texto*/
-  
+      .btn{
         background: #f1efc9; /*COLOR FONDO FINAL f1efc9*/
- 
+      }
+
+      .registro-container{
+        background-color: #ffffff;
+        width: 400px;
+        height: 300px;
+        max-width: 100%;
+        padding: 30px;
+        margin: 50px auto;
+        border-radius: 8px; /* Esquinas redondeadas */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
       
 }
