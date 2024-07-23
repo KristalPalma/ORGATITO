@@ -7,17 +7,18 @@ $conexion= $con;
 $errores = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $categoria	 = $_POST['categoria'];
     $nombre = $_POST['nombre'];
+    $categoria	 = $_POST['categoria'];
     $cantidad = $_POST['cantidad'];
     $precio_kilo = $_POST['precio_kilo'];
+    $imagen = $_POST['imagen'];
     $promocion = $_POST['promocion'];
     $tipo_entrega = $_POST['tipo_entrega'];
-    $imagen = $_POST['imagen'];
 
 
-    $peticionInsertar = "INSERT INTO productos (categoria, nombre, cantidad, precio_kilo, promocion, tipo_entrega, imagen)
-    VALUES ('$categoria	','$nombre','$cantidad','$precio_kilo','$promocion','$tipo_entrega','$imagen')";
+
+    $peticionInsertar = "INSERT INTO productos (nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega)
+    VALUES ('$nombre','$categoria','$cantidad','$precio_kilo','$imagen','$promocion','$tipo_entrega')";
 
 if (mysqli_query($conexion, $peticionInsertar)) {
     echo "ACTUALIZACION COMPLETA";
