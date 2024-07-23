@@ -1,6 +1,6 @@
 <?php
 
-include '../content/conexion.php';
+include '../../content/conexion.php';
 
 
 $errores = [];
