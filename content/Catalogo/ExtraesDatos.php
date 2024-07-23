@@ -1,7 +1,7 @@
 <?php
 include '../conexion.php';
 
-$conn= $con;z
+$conn= $con;
 
 // Verificar conexión
 if ($conn->connect_error) {
