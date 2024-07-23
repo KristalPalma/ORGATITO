@@ -1,4 +1,9 @@
 /* Login Form Styles */
+  header {
+    background-color: #C5FBAD;
+   padding: 1px 0;
+  }
+
 .login-container {
     width: 400px; /* Adjust width as needed */
     margin: 50px auto; /* Center the form horizontally */
@@ -31,12 +36,12 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 3px;
   }
   
   .login-container form input[type="submit"] {
-    background-color: #337ab7; /* Primary Color */
+    background-color: #1b6500; /* Primary Color */
     color: #fff;
     padding: 12px 20px; /* Adjust padding */
     border: none;
@@ -46,7 +51,7 @@
   }
   
   .login-container form input[type="submit"]:hover {
-    background-color: #286090; /* Darker Primary Color on hover */
+    background-color: #1b6500; /* Darker Primary Color on hover */
   }
   
   .login-container form a {
@@ -62,10 +67,13 @@
   .login-container form .remember-me {
     display: flex; /* Arrange checkbox and label horizontally */
     align-items: center; /* Align checkbox and label vertically */
-    margin-bottom: 10px;
   }
+  .checkbox {
+    margin-right: 10px;
+  }
+    
+  
   
   .login-container form .remember-me input[type="checkbox"] {
-    margin-right: 5px;
+    margin-right: 10px;
   }
-  

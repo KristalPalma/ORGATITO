@@ -25,7 +25,7 @@
     --notification-confirm: #BEF992;
 
     /*FORMA*/
-    .principal-btn {
+      .principal-btn {
         background-color: #acf5ac;   /*COLOR FINAL: BOTON PRINCIPAL*/
         color: rgb(4, 3, 3);
         padding: 10px;
@@ -53,8 +53,4 @@
         font-family: 'Lucida Console' ;
         color:#f159fc
       }
-      
-  
-        background: #f1efc9; /*COLOR FONDO FINAL f1efc9*/
-      }
-      
+    }

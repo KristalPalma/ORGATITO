@@ -1,5 +1,5 @@
 <?php
 
-$con = mysqli_connect('localhost','root','', 'orgatito');
+$conexion = mysqli_connect('localhost','root','', 'orgatito');
 
 ?>
