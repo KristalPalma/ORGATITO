@@ -7,18 +7,17 @@ $conexion= $con;
 $errores = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $tipo = $_POST['tipo'];
+    $categoria	 = $_POST['categoria'];
     $nombre = $_POST['nombre'];
     $cantidad = $_POST['cantidad'];
-    $precio = $_POST['precio'];
+    $precio_kilo = $_POST['precio_kilo'];
     $promocion = $_POST['promocion'];
-    $entrega = $_POST['entrega'];
-    $proveedor = $_POST['proveedor'];
+    $tipo_entrega = $_POST['tipo_entrega'];
     $imagen = $_POST['imagen'];
 
 
-    $peticionInsertar = "INSERT INTO productos (tipo, nombre, cantidad, precio, promocion, entrega, proveedor, imagen)
-    VALUES ('$tipo','$nombre','$cantidad','$precio','$promocion','$entrega','$proveedor','$imagen')";
+    $peticionInsertar = "INSERT INTO productos (categoria, nombre, cantidad, precio_kilo, promocion, tipo_entrega, imagen)
+    VALUES ('$categoria	','$nombre','$cantidad','$precio_kilo','$promocion','$tipo_entrega','$imagen')";
 
 if (mysqli_query($conexion, $peticionInsertar)) {
     echo "ACTUALIZACION COMPLETA";
@@ -57,7 +56,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
 
 
          <label for="">TIPO</label>
-        <select name ="tipo" >
+        <select name ="categoria" >
             <option value = "Verdura">Verdura</option>
             <option value = "Fruta">Fruta</option>
         </select>
@@ -70,19 +69,16 @@ if (mysqli_query($conexion, $peticionInsertar)) {
         <input type="int" name="cantidad">
 
         <label for="">PRECIO</label>
-        <input type="number" name="precio">
+        <input type="number" name="precio_kilo">
 
         <label for="">PROMOCIÓN</label>
         <input type="int" name="promocion">
 
         <label for="">TIPO DE ENTREGA</label>
-        <select name ="entrega" >
+        <select name ="tipo_entrega" >
             <option value = "Local">Local</option>
             <option value = "Domicilio">Domicilio</option>
         </select>       
-
-        <label for="">PROVEEDOR</label>
-        <input type="text" name="proveedor">
 
         <label for="">IMAGEN</label>
         <input type="text" name="imagen">
