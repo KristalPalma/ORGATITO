@@ -1,0 +1,136 @@
+
+    /*FORMA*/
+    
+    .principal-btn {
+        background-color: #acf5ac;   /*COLOR FINAL: BOTON PRINCIPAL*/
+        color: rgb(4, 3, 3);
+        padding: 10px;
+        border-radius: 10px; /*bordes redondos*/
+        border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        font-family: 'Lucida Console'; 
+      }
+
+    .principal-btn:active{
+        background: #F4F7B7; /*COLOR FINAL?*/
+        transform: scale(0.10); 
+      }
+
+      .principal-btn:hover{
+        background: #8ceb88; /*COLOR FINAL? boton CURSOR*/
+      }
+
+      /*CUERPO*/
+      body {
+        font-family: 'lucida console';
+        margin: 0;
+        padding: 0;
+        background-color: #dbe2a3;
+        color: #333; /* Text Color */
+      }
+
+      /*texto*/
+
+    .h1_rosa {
+        font-family: 'Lucida Console' ;
+        color:#f159fc
+      }
+
+      /* Header Styles */
+      .header {
+        background-color: #BCDFF2;
+        padding: 1px;
+        border-bottom: 3px solid black;
+      }
+
+      .header img {
+        width: 100px; /* Adjust as needed */
+        height: auto;
+      }
+
+      .header h1 {
+        font-size: 24px; /* Adjust as needed */
+        margin-bottom: 2px;
+      }
+
+      .header {
+        font-size: 16px; /* Adjust as needed */
+        line-height: 1.5;
+      }
+
+      .container {
+        max-width: 99%;
+        margin: 0 auto;
+        padding: 1px;
+        display: flex; /* Use flexbox for positioning */
+        justify-content:stretch; /* Distribute space between logo and nav */
+        align-items: center; /* Align logo and nav vertically */
+      }
+    /* Navigation Styles */
+.container nav {
+    display: flex; /* Use flexbox for positioning nav items */
+  }
+  
+  .container nav ul {
+    list-style: none; /* Remove default bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for positioning links */
+  }
+  
+  .container nav li {
+    margin-left: 15px; /* Spacing between nav items */
+    margin-right: 15px;
+  }
+  
+  .container nav a {
+    display: block; /* Make links display as block elements */
+    padding: 10px 60px; /* Adjust padding as needed */
+    text-decoration: none;
+    color: #333; /* Link text color */
+    font-weight: bold; /* Make link text bold */
+  }
+  
+  .container nav a:hover {
+    background-color: #e8f0fe; /* Light Blue background on hover */
+    color: #337ab7; /* Primary Color on hover */
+  }
+
+
+  h1{
+    color:#000
+  }
+
+  .title-container {
+    background-color: #acf5ac;   /*COLOR FINAL: BOTON PRINCIPAL*/
+    color: rgb(4, 3, 3);
+    padding: 10px;
+    border-radius: 10px; /*bordes redondos*/
+    border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
+    cursor: pointer;
+    font-family: 'Lucida Console'; 
+    text-align: center;
+}
+  .titleee-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(228, 178, 231);
+    border-radius: 50%;
+    text-align: center;
+}
+
+.box-container {
+    background-color: pink; /* Fondo rosa */
+    padding: 20px; /* Espacio interior */
+    border: 2px solid #ff69b4; /* Borde sólido rosa oscuro */
+    border-radius: 10px; /* Bordes redondeados */
+    width: fit-content; /* Ancho ajustado al contenido */
+    margin: 20px auto; /* Centrado horizontalmente con margen superior e inferior */
+    text-align: center; /* Centrar texto */
+}
+
+      
