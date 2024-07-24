@@ -11,23 +11,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $categoria	 = $_POST['categoria'];
     $cantidad = $_POST['cantidad'];
     $precio_kilo = $_POST['precio_kilo'];
-    $imagen = $_POST['imagen'];
+    //$imagen = $_POST['imagen'];
+    $archivo=$_FILES['archivo'];
     $promocion = $_POST['promocion'];
     $tipo_entrega = $_POST['tipo_entrega'];
 
+    $carpeta="imagenes";
+    $nombreArchivo = uniqid(rand(), true). ".jpg";
 
+    $archivo_string = var_dump($archivo);
+
+    if(!is_dir($carpeta)){
+        mkdir($carpeta);}
+
+    move_uploaded_file($archivo['tmp_name'], $carpeta."/".$nombreArchivo);
 
     $peticionInsertar = "INSERT INTO productos (nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega)
-    VALUES ('$nombre','$categoria','$cantidad','$precio_kilo','$imagen','$promocion','$tipo_entrega')";
+    VALUES ('$nombre','$categoria','$cantidad','$precio_kilo','$archivo_string','$promocion','$tipo_entrega')";
 
-if (mysqli_query($conexion, $peticionInsertar)) {
-    echo "ACTUALIZACION COMPLETA";
-    header("location: ./MENSAJES/exitoso.html ");
+//if (mysqli_query($conexion, $peticionInsertar)) {
+  //  echo "ACTUALIZACION COMPLETA";
+    //header("location: ./MENSAJES/exitoso.html ");
     
-    exit(); 
-} else {
-   echo "no se pudo actualizar";
-}
+//    exit(); 
+//} else {
+//   echo "no se pudo actualizar";
+// }
 
     } 
 
@@ -79,7 +88,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
     <h1>INGRESO DE PRODUCTOS</h1>
     <h2>En esta sección podrás agregar los detalles de un nuevo producto.</h2>
 
-    <div class="form-container"><form action="agregar.php" method="POST">
+    <div class="form-container"><form action="agregar.php" method="POST" enctype="multipart/form-data">
 
 
          <label for="">Tipo</label>
@@ -113,7 +122,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
         <br></br>       
 
         <label for="">IMAGEN</label>
-        <input type="text" name="imagen">
+        <input type="file" name="archivo" accept="image/jpeg, image/png">
         <br></br>
 
         <input type="submit" value="Envíar">
