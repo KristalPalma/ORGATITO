@@ -24,7 +24,7 @@
             box-sizing: border-box;
         }
         #titulo h1 {
-            font-size: 4.5em; /* Tamaño de letra aumentado */
+            font-size: 1.5em;
             margin: 0;
             padding-bottom: 5px;
             border-bottom: 2px solid #000; /* Línea negra debajo del texto */
