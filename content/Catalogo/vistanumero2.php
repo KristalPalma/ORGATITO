@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="../../styles/estilos.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,31 +16,39 @@
             align-items: center;
             height: 100vh;
         }
+        #catalogo-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px 40px;
+            box-sizing: border-box;
+        }
         #titulo {
             width: 100%;
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
         }
         #titulo h1 {
-            font-size: 1.5em;
+            font-size: 4.5em;
             margin: 0;
             padding-bottom: 5px;
-            border-bottom: 2px solid #000; /* Línea negra debajo del texto */
+            border-bottom: 2px solid #000;
         }
         #catalogo {
             display: flex;
-            justify-content: flex-start; /* Alinea los elementos a la izquierda */
-            padding: 20px;
-            width: 100%; /* Asegura que el contenedor ocupe todo el ancho de la pantalla */
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20px;
+            width: 100%;
             box-sizing: border-box;
         }
         .producto {
             border: 1px solid #ddd;
             border-radius: 5px;
-            margin: 10px;
+            margin: 10px 0;
             padding: 10px;
             background-color: #fff;
             width: 300px;
@@ -84,6 +93,29 @@
     </style>
 </head>
 <body>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="../../images/logo orgatito.png" alt="ORGATITO Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a class="principal-btn" href="../../content/indexproveedor.html">Inicio</a></li>
+                <li><a class="principal-btn" href="../AdminProductos/administracion.html">Administración de productos</a></li>
+                <li><a class="principal-btn" href="../../content/AdminProductos/inventario.html">Inventario</a></li>
+                <li><a class="principal-btn" href="../../content/AdminProductos/datospago.html">Datos de pago</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="logo">
+                <img src="../../images/sesionn.png" alt="sesion Logo">
+            </div> 
+        </div>
+    </div>
+</header>
+
+<div id="catalogo-container">
     <div id="titulo">
         <h1>Selección de Productos</h1>
     </div>
@@ -106,5 +138,6 @@
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
