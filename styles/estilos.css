@@ -67,7 +67,7 @@
         font-family: 'lucida console';
         margin: 0;
         padding: 0;
-        background-color: #dbe2a3;
+        background-color: #e9f0ae;
         color: #333; /* Text Color */
       }
 
@@ -134,7 +134,25 @@
     color: #337ab7; /* Primary Color on hover */
   }
 
+  .form-container {
+    padding: 20px;          /* Espaciado interno */
+    border-radius: 8px;     /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    width: 100%;            /* Ancho máximo del formulario */
+    max-width: 500px;       /* Ancho máximo del formulario */
+    justify-content: center;
+    display: grid;
+    transform: translate(90%, 10%); /*posicion de contenedor*/
+    font-size: 25px;
+}
 
+.form-container input {
+  margin-bottom: 10px;    /* Espacio entre campos del formulario */
+  padding: 10px;          /* Espaciado interno de los campos */
+  width: 100%;            /* Ancho completo de los campos */
+  border: 1px solid #ccc; /* Borde de los campos */
+  border-radius: 4px;     /* Bordes redondeados de los campos */
+}
 
 
  /*𓍢ִ໋🌷¸.☆¸.♡.¸• ๑۩ TEXTO ۩๑ • ¸.☆¸.♡.¸𓍢ִ໋🌷͙֒✧*/
