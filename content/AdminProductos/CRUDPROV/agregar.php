@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 if (mysqli_query($conexion, $peticionInsertar)) {
     echo "ACTUALIZACION COMPLETA";
-    header("location: ../../../MENSAJES/exitoso.html ");
+    header("location: ../MENSAJES/exitoso.html");
     
     exit(); 
 } else {
@@ -76,7 +76,6 @@ if (mysqli_query($conexion, $peticionInsertar)) {
 
 
     <br><a class=principal-btn  href="../../AdminProductos/administracion.html">Regresar</a>
-
 <div class="box-container"><h1>  Agregar productos </h1></div>
 
     <?php foreach ($errores as $error): ?>
