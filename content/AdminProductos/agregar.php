@@ -29,7 +29,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
    echo "no se pudo actualizar";
 }
 
-    }
+    } 
 
 ?>
 

@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     // Bind result variables
                     mysqli_stmt_bind_result($stmt, $usuario, $hashed_password);
                     if(mysqli_stmt_fetch($stmt)){
-                        if(password_verify($password, $hashed_password)){
+                        if(password_verify($contrasena, $hashed_password)){
                             // Password is correct, so start a new session
                             $status = session_status();
                             if($status == PHP_SESSION_NONE){
@@ -101,43 +101,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
  
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
-    </style>
+        <link rel="stylesheet" href="../../styles/login.css">
 </head>
 <body><center>
-    <div class="wrapper">
-        <h2>Iniciar sesión</h2>
-        <p>Por favor, introduzca sus datos para Iniciar Sesión.</p>
+<div class="login-container">
+    <h2>ORGATITO </h2>
+    <h3>Inicia sesión</h3>
+    <form action="procesar_login.php" method="post">
+        <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        <select id="tipoUsuario" name="tipoUsuario" required>
+            <option value="">Seleccionar tipo de usuario</option>
+            <option value="cliente">Cliente</option>
+            <option value="proveedor">Proveedor</option>
+          </select>          
+        <div>
+            <input type="checkbox" class="checkbox" id="remember" name="remember">
+            <label for="remember">Recuérdame</label>
+        </div>
+        <input type="submit" value="Iniciar Sesión">
+    </form>
+    <a href="recuperar_contra.html">¿Olvidaste tu contraseña?</a> | <a href="../usuario/crear_cuenta.php">Regístrate</a>
+</div>
 
-        <?php 
-        if(!empty($login_err)){
-            echo '<div class="alert alert-danger">' . $login_err . '</div>';
-        }        
-        ?>
-
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group">
-                <label>Usuario</label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group">
-                <label>Contraseña</label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
-            </div>
-            <p>¿No tienes una cuenta? <a href="register.php">Registrate</a>.</p>
-        </form>
-    </div></center>
 </body>
 </html>

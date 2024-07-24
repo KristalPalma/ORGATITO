@@ -86,27 +86,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro</title>
-    <link rel="stylesheet" href="/styles/login.css">
+
+    <link rel="stylesheet" href="../../content/styles/global.css">
+    <link rel="stylesheet" href="../../../styles/login.css">
 
     <a href="inicio_sesion.html">Regresar</a>
 
 </head>
 <body>
 
-<div class="registro-container">
+<div class="login-container">
   <h2>ORGATITO </h2>
   <h3>Regístrate</h3>
   <form action="procesar_login.php" method="post">
+    <label for="">Ingresa un nombre de usuario</label>
     <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+    <label for="">Ingresa un correo</label>
     <input type="text" id="correo" name="correo" placeholder="Correo" required>
+    <label for="">Ingresa un telefono</label>
     <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+    <label for="">Ingresa una contraseña (debe tener al menos 6 caracteres)</label>
     <input type="password" id="password" name="contrasena" placeholder="Contraseña" required>
     <select id="tipoUsuario" name="tipoUsuario" required>
+    <label for="">Ingresa el tipo de usuario</label>
+
       <option value="">Seleccionar tipo de usuario</option>
       <option value="cliente">Cliente</option>
       <option value="proveedor">Proveedor</option>

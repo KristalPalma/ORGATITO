@@ -4,7 +4,8 @@
    padding: 1px 0;
   }
 
-.login-container {
+.login-container,
+.registro-container {
     width: 400px; /* Adjust width as needed */
     margin: 50px auto; /* Center the form horizontally */
     padding: 30px;
@@ -72,8 +73,6 @@
     margin-right: 10px;
   }
     
-  
-  
   .login-container form .remember-me input[type="checkbox"] {
     margin-right: 10px;
   }
