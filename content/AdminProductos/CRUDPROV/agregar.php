@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $carpeta="imagenes";
     $nombreArchivo = uniqid(rand(), true). ".jpg";
 
-    $archivo_string = var_dump($archivo);
+    var_dump($archivo);
 
     if(!is_dir($carpeta)){
         mkdir($carpeta);}
@@ -27,16 +27,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     move_uploaded_file($archivo['tmp_name'], $carpeta."/".$nombreArchivo);
 
     $peticionInsertar = "INSERT INTO productos (nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega)
-    VALUES ('$nombre','$categoria','$cantidad','$precio_kilo','$archivo_string','$promocion','$tipo_entrega')";
+    VALUES ('$nombre','$categoria','$cantidad','$precio_kilo','$nombreArchivo','$promocion','$tipo_entrega')";
 
-//if (mysqli_query($conexion, $peticionInsertar)) {
-  //  echo "ACTUALIZACION COMPLETA";
-    //header("location: ./MENSAJES/exitoso.html ");
+if (mysqli_query($conexion, $peticionInsertar)) {
+    echo "ACTUALIZACION COMPLETA";
+    header("location: ../../../MENSAJES/exitoso.html ");
     
-//    exit(); 
-//} else {
-//   echo "no se pudo actualizar";
-// }
+    exit(); 
+} else {
+   echo "no se pudo actualizar";
+ }
 
     } 
 
@@ -61,8 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </div>
             <nav>
               <ul>
-                  <li><a class=principal-btn href="../../content/indexproveedor.html">Inicio</a></li>
-                  <li><a class=principal-btn href="../content/AdminProductos/administracion.html">Administración de productos</a></li>
+                  <li><a class=principal-btn href="../../indexproveedor.html">Inicio</a></li>
+                  <li><a class=principal-btn href="../administracion.html">Administración de productos</a></li>
                   <li><a class=principal-btn href="../../content/AdminProductos/inventario.html">Inventario</a></li>
                   <li><a class=principal-btn href="../../content/AdminProductos/datospago.html">Datos de pago</a></li>
               </ul>
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </header>
 
 
-    <br><a class=principal-btn  href="../indexproveedor.html">Regresar</a>
+    <br><a class=principal-btn  href="../../AdminProductos/administracion.html">Regresar</a>
 
 <div class="box-container"><h1>  Agregar productos </h1></div>
 
