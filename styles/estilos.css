@@ -1,6 +1,7 @@
 
     /*FORMA*/
-    
+    /*𓍢ִ໋🌷¸.☆¸.♡.¸• ๑۩ BOTONES ۩๑ • ¸.☆¸.♡.¸𓍢ִ໋🌷͙֒✧*/
+
     .principal-btn {
         background-color: #acf5ac;   /*COLOR FINAL: BOTON PRINCIPAL*/
         color: rgb(4, 3, 3);
@@ -9,7 +10,8 @@
         border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
         transition: transform 0.3s ease-in-out;
         cursor: pointer;
-        font-family: 'Lucida Console'; 
+        font-family: 'Lucida Console';
+        text-decoration: none;
       }
 
     .principal-btn:active{
@@ -20,6 +22,45 @@
       .principal-btn:hover{
         background: #8ceb88; /*COLOR FINAL? boton CURSOR*/
       }
+    /*BOTON GRANDE*/
+    
+    .big-btn {
+      background-color: #acf5ac;   /*COLOR FINAL: BOTON PRINCIPAL*/
+      color: rgb(4, 3, 3);
+      padding: 25px 50px;
+      border-radius: 10px; /*bordes redondos*/
+      border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      font-family: 'Lucida Console';
+      text-decoration: none;
+      font-size: 25px;
+    }
+
+  .big-btn:active{
+      background: #F4F7B7; /*COLOR FINAL?*/
+      transform: scale(0.10); 
+    }
+
+    .big-btn:hover{
+      background: #8ceb88; /*COLOR FINAL? boton CURSOR*/
+    }
+
+    .container2 {
+      display: flex;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center;     /* Centra verticalmente */
+      height: 80vh;           /* Altura del contenedor (ej. toda la pantalla) */
+      gap: 20px;
+    }
+    
+    .container2 nav li {
+      margin-left: 15px; /* Spacing between nav items */
+      margin-right: 15px;
+      list-style-type: none;
+    }
+
+
 
       /*CUERPO*/
       body {
@@ -30,12 +71,8 @@
         color: #333; /* Text Color */
       }
 
-      /*texto*/
+ /*𓍢ִ໋🌷¸.☆¸.♡.¸• ๑۩ HEADER ۩๑ • ¸.☆¸.♡.¸𓍢ִ໋🌷͙֒✧*/
 
-    .h1_rosa {
-        font-family: 'Lucida Console' ;
-        color:#f159fc
-      }
 
       /* Header Styles */
       .header {
@@ -98,39 +135,39 @@
   }
 
 
+
+
+ /*𓍢ִ໋🌷¸.☆¸.♡.¸• ๑۩ TEXTO ۩๑ • ¸.☆¸.♡.¸𓍢ִ໋🌷͙֒✧*/
   h1{
-    color:#000
+    color:#000;
+    font-family:'lucida console';
   }
 
-  .title-container {
-    background-color: #acf5ac;   /*COLOR FINAL: BOTON PRINCIPAL*/
-    color: rgb(4, 3, 3);
-    padding: 10px;
-    border-radius: 10px; /*bordes redondos*/
-    border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
-    cursor: pointer;
-    font-family: 'Lucida Console'; 
-    text-align: center;
-}
-  .titleee-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 200px;
-    background-color: rgb(228, 178, 231);
-    border-radius: 50%;
-    text-align: center;
-}
-
 .box-container {
-    background-color: pink; /* Fondo rosa */
-    padding: 20px; /* Espacio interior */
-    border: 2px solid #ff69b4; /* Borde sólido rosa oscuro */
-    border-radius: 10px; /* Bordes redondeados */
+    background-color: #F4B8E9; /* Fondo rosa */
+    padding: 6px 300px; /* Espacio interior */
+    border: 2px solid #000000; /* Borde sólido rosa oscuro */
+    border-radius: 30px; /* Bordes redondeados */
     width: fit-content; /* Ancho ajustado al contenido */
     margin: 20px auto; /* Centrado horizontalmente con margen superior e inferior */
     text-align: center; /* Centrar texto */
 }
 
-      
+.centered-text {
+    position: absolute; /* Posiciona el texto absolutamente */
+    top: 50%; /* Coloca el texto en la mitad de la altura */
+    left: 45%; /* Coloca el texto en la mitad del ancho */
+    right: .1%;
+    transform: translate(-40%, -40%); /* Ajusta para centrar el texto */
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}   
+
+.container-center-text {
+
+  position: absolute; /* Centra horizontalmente */
+  height: 20vh;           /* Altura del contenedor (toda la pantalla) */
+  margin: 0;               /* Elimina el margen por defecto del body */
+  left: 10%;
+}
