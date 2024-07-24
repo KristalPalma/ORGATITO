@@ -99,15 +99,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
- 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-        <link rel="stylesheet" href="../../styles/login.css">
+        <link rel="stylesheet" href="../../../styles/login.css">
+        <a href="../../../index.html">Regresar</a>
 </head>
-<body><center>
+<body>
+
 <div class="login-container">
     <h2>ORGATITO </h2>
     <h3>Inicia sesión</h3>
@@ -130,3 +132,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 </body>
 </html>
+
