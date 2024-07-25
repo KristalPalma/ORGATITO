@@ -1,3 +1,5 @@
+/* css del catalogo*/
+
 body {
     font-family: Arial, sans-serif;
     background-color: #C5FBAD;
@@ -8,12 +10,14 @@ body {
     align-items: center;
     height: 100vh;
 }
-.header {
+
+.header {   
+    background-color: #BCDFF2;
+    padding: 1px;
+    border-bottom: 3px solid black;
     width: 100%;
-    background-color: #0000FF;
-    padding: 20px;
-    box-sizing: border-box;
 }
+
 .header .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -117,3 +121,4 @@ nav ul li a {
     cursor: pointer;
     border-radius: 5px;
 }
+/*
