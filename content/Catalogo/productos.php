@@ -18,35 +18,38 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 // Verificar si se encontró el producto
+$product = null;
 if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    echo '<div class="detalle-producto">';
-    echo '<img src="' . $row["imagen"] . '" alt="' . $row["nombre"] . '" />';
-    echo '<h1>' . $row["nombre"] . '</h1>';
-    echo '<p>Categoría: ' . $row["categoria"] . '</p>';
-    echo '<p>Cantidad: ' . $row["cantidad"] . '</p>';
-    echo '<p>Precio: $' . number_format($row["precio_kilo"], 2) . '/kg</p>';
-    echo '<p>Promoción: ' . $row["promocion"] . '</p>';
-    echo '<p>Tipo de entrega: ' . $row["tipo_entrega"] . '</p>';
-    echo '</div>';
-} else {
-    echo "No se encontró el producto.";
+    $product = $result->fetch_assoc();
 }
 
 // Cerrar conexión
 $conn->close();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detalles del Producto</title>
     <link rel="stylesheet" href="../../styles/catalogo.css">
 </head>
 <body>
-    
+    <?php if ($product): ?>
+        <div class="detalle-producto">
+            <img src="<?php echo $product['imagen']; ?>" alt="<?php echo htmlspecialchars($product['nombre']); ?>" />
+            <div class="info-producto">
+                <h1><?php echo htmlspecialchars($product['nombre']); ?></h1>
+                <p>Categoría: <?php echo htmlspecialchars($product['categoria']); ?></p>
+                <p>Cantidad: <?php echo htmlspecialchars($product['cantidad']); ?></p>
+                <p>Precio: $<?php echo number_format($product['precio_kilo'], 2); ?>/kg</p>
+                <p>Promoción: <?php echo htmlspecialchars($product['promocion']); ?></p>
+                <p>Tipo de entrega: <?php echo htmlspecialchars($product['tipo_entrega']); ?></p>
+            </div>
+        </div>
+    <?php else: ?>
+        <p>No se encontró el producto.</p>
+    <?php endif; ?>
 </body>
 </html>
