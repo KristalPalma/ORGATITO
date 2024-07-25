@@ -79,6 +79,7 @@
         background-color: #BCDFF2;
         padding: 1px;
         border-bottom: 3px solid black;
+        width: 100%;
       }
 
       .header img {

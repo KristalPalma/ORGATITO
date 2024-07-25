@@ -1,4 +1,5 @@
 <?php
+
 include '../conexion.php';
 
 $conn= $con;
@@ -34,4 +35,3 @@ if ($result->num_rows > 0) {
 // Cerrar conexión
 $conn->close();
 ?>
-
