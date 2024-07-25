@@ -35,17 +35,6 @@
     </div>
 
     <?php
-    include '../../conexion.php';
-    $conn = $con;
-    // Verificar conexión
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
-
-    // Consulta para extraer los datos de la tabla 'productos'
-    $sql = "SELECT nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega FROM productos";
-    $result = $conn->query($sql);
-
     // Verificar si hay resultados
     include '../../conexion.php';
     $conn = $con;
@@ -56,7 +45,7 @@
     }
     
     // Consulta para extraer los datos de la tabla 'productos'
-    $sql = "SELECT producto_id, nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega FROM productos";
+    $sql = "SELECT producto_id, nombre, imagen FROM productos";
     $result = $conn->query($sql);
     
     // Verificar si hay resultados
@@ -67,11 +56,6 @@
             echo '<img src="' . $row["imagen"] . '" alt="' . $row["nombre"] . '" />';
             echo '<div class="detalle-producto">';
             echo '<span class="nombre">Nombre: ' . $row["nombre"] . '</span><br>';
-            echo '<span class="categoria">Categoría: ' . $row["categoria"] . '</span><br>';
-            echo '<span class="cantidad">Cantidad: ' . $row["cantidad"] . '</span><br>';
-            echo '<span class="precio">Precio: $' . number_format($row["precio_kilo"], 2) . '/kg</span><br>';
-            echo '<span class="promocion">Promoción: ' . $row["promocion"] . '</span><br>';
-            echo '<span class="tipo_de_entrega">Tipo de entrega: ' . $row["tipo_entrega"] . '</span><br>';
             echo '<div class="botones">';
             echo '<a href="productos.php?id=' . $row["producto_id"] . '" class="ver-mas-btn">Ver más</a>';
             echo '</div>';
