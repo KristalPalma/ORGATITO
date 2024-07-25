@@ -45,33 +45,39 @@
     }
     
     // Consulta para extraer los datos de la tabla 'productos'
-    $sql = "SELECT producto_id, nombre, imagen FROM productos";
-    $result = $conn->query($sql);
+    $consulta = "SELECT * FROM productos";
+
+$resultado = mysqli_query($conn, $consulta);
+
+$ProductosObtenidos = array();
+
+while ($producto = mysqli_fetch_assoc($resultado)) {
+    $ProductosObtenidos[] = $producto;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros</title>
+</head>
+
+<body>
+    <?php foreach ($ProductosObtenidos as $Productoitem): ?>
+
+        <h1>Título: <?php echo $Productoitem['nombre'] ?></h1>
+        <img src="imagenes/<?php echo $Productoitem['imagen'] ?>" alt="">
+        <p><?php echo $Productoitem['imagen'] ?></p>
+
+    <?php endforeach ?>
+</body>
+
+</html>
     
-    // Verificar si hay resultados
-    if ($result->num_rows > 0) {
-        echo '<div id="catalogo">';
-        while($row = $result->fetch_assoc()) {
-            echo '<div class="producto">';
-            echo '<img src="' . $row["imagen"] . '" alt="' . $row["nombre"] . '" />';
-            echo '<div class="detalle-producto">';
-            echo '<span class="nombre">Nombre: ' . $row["nombre"] . '</span><br>';
-            echo '<div class="botones">';
-            echo '<a href="productos.php?id=' . $row["producto_id"] . '" class="ver-mas-btn">Ver más</a>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-        }
-        echo '</div>';
-    } else {
-        echo "No se encontraron productos.";
-    }
-    
-    //Cerrar conexión
-    $conn->close();
-    ?>
     
 </div>
 
-</body>
 </html>
