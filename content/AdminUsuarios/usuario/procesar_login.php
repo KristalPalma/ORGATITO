@@ -9,7 +9,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
  
 // Include config file
-require_once "usuariosbd.php";
+require_once 'usuariosbd.php';
  
 // Define variables and initialize with empty values
 $usuario = $contrasena = "";
@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare a select statement
         $sql = "SELECT usuario, contrasena FROM usuarios WHERE usuario = ?";
         
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_usuario);
             
@@ -96,18 +96,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Close connection
-    mysqli_close($link);
+    mysqli_close($con);
 }
 ?>
- 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-        <link rel="stylesheet" href="../../styles/login.css">
+        <link rel="stylesheet" href="../../../styles/login.css">
+        <a href="../../../index.html">Regresar</a>
 </head>
-<body><center>
+<body>
+
 <div class="login-container">
     <h2>ORGATITO </h2>
     <h3>Inicia sesión</h3>
@@ -130,3 +132,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 </body>
 </html>
+
