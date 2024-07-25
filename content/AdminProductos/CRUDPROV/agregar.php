@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tipo_entrega = $_POST['tipo_entrega'];
 
     $carpeta="imagenes";
-    $nombreArchivo = uniqid(rand(), true). ".jpg";
+    $nombreArchivo = uniqid(rand(), true). ".jpeg";
 
     var_dump($archivo);
 
