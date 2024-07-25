@@ -146,13 +146,34 @@
     font-size: 25px;
 }
 
-.form-container input {
+  .form-container input {
   margin-bottom: 10px;    /* Espacio entre campos del formulario */
   padding: 10px;          /* Espaciado interno de los campos */
-  width: 100%;            /* Ancho completo de los campos */
-  border: 1px solid #ccc; /* Borde de los campos */
+  width: 80%;            /* Ancho completo de los campos */
+  border: 1px solid #1901f0; /* Borde de los campos */
   border-radius: 4px;     /* Bordes redondeados de los campos */
+  color: #6a90d2;
 }
+
+.form-container label {
+  margin-right: 10px; /* Espacio entre el label y el input */
+  width: 10px; /* Ajusta el ancho del label según sea necesario */
+}
+
+
+
+.input{
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #94f1a6; /* Color de fondo del input */
+    transition: border-color 0.3s;
+}
+
+
+
+
 
 
  /*𓍢ִ໋🌷¸.☆¸.♡.¸• ๑۩ TEXTO ۩๑ • ¸.☆¸.♡.¸𓍢ִ໋🌷͙֒✧*/
@@ -170,15 +191,39 @@
     margin: 20px auto; /* Centrado horizontalmente con margen superior e inferior */
     text-align: center; /* Centrar texto */
 }
+.box-container2 {
+    background-color: #a7e298; /* Fondo rosa */
+    padding: 100px 200px; /* Espacio interior */
+    border: 2px solid #000000; /* Borde sólido rosa oscuro */
+    border-radius: 30px; /* Bordes redondeados */
+    width: fit-content; /* Ancho ajustado al contenido */
+    margin: 20px auto; /* Centrado horizontalmente con margen superior e inferior */
+    text-align: center; /* Centrar texto */
+    transform: translate(0%, 50%);
+    font-size: 40px;
+}
+
+
+
+.centered-textt{
+  position: absolute; /* Posiciona el texto absolutamente */
+  top: 40%; /* Coloca el texto en la mitad de la altura */
+  left: 45%; /* Coloca el texto en la mitad del ancho */
+  right: .1%;
+  transform: translate(-40%, -40%); /* Ajusta para centrar el texto */
+  font-size: 24px;
+  color: #000000;
+  text-align: center;
+}  
 
 .centered-text {
     position: absolute; /* Posiciona el texto absolutamente */
-    top: 50%; /* Coloca el texto en la mitad de la altura */
+    top: 60%; /* Coloca el texto en la mitad de la altura */
     left: 45%; /* Coloca el texto en la mitad del ancho */
     right: .1%;
-    transform: translate(-40%, -40%); /* Ajusta para centrar el texto */
+    transform: translate(-40%, -100%); /* Ajusta para centrar el texto */
     font-size: 24px;
-    color: #333;
+    color: #000000;
     text-align: center;
 }   
 
@@ -189,3 +234,5 @@
   margin: 0;               /* Elimina el margen por defecto del body */
   left: 10%;
 }
+
+
