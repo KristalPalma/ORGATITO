@@ -36,7 +36,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Producto</title>
-    <link rel="stylesheet" href="../../styles/productos.css">
+    <link rel="stylesheet" href="../../styles/jesus/vista.css">
     
 
 </head>
@@ -45,15 +45,16 @@ $conn->close();
     <div id="catalogo-container">
         <?php if ($product): ?>
             <div class="producto">
-                <div class="producto-imagen">
-                    <img src="../AdminProductos/CRUDPROV/imagenes/.<?php echo $product['imagen']; ?>" alt="<?php echo htmlspecialchars($product['nombre']); ?>" />
+                <div class="img-especifica">
+                    <img src="../AdminProductos/CRUDPROV/imagenes/<?php echo $product['imagen']; ?>" alt="<?php echo htmlspecialchars($product['nombre']); ?>" />
                 </div>
                 <div class="detalle-producto">
                     <h1 class="nombre"><?php echo htmlspecialchars($product['nombre']); ?></h1>
                     <p>Categoría: <?php echo htmlspecialchars($product['categoria']); ?></p>
                     <p>Cantidad: <?php echo htmlspecialchars($product['cantidad']); ?></p>
                     <p>Precio: $<?php echo number_format($product['precio_kilo'], 2); ?>/kg</p>
-                    <p class="promocion">Promoción: <?php echo htmlspecialchars($product['promocion']); ?></p>
+                    <p class="promocion">Promoción: <?php echo htmlspecialchars($product['promocion'] ?? ''); ?></p>
+
                     <p>Tipo de entrega: <?php echo htmlspecialchars($product['tipo_entrega']); ?></p>
                 </div>
             </div>
