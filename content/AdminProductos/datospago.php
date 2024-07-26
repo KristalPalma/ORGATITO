@@ -12,28 +12,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $correo = $_POST['correo'];
     $numero = $_POST['numero'];
     $concepto = $_POST['concepto'];
-    $numero = $_POST['numero'];
-    $concepto = $_POST['concepto'];
+    $nombre_beneficiario = $_POST['nombre_beneficiario'];
     $mesAnio = $_POST['mes-anio'];
 
-    $fecha = $mesAnio . '-01';
+    $fecha_expiracion = $mesAnio . '-01';
 
-    $carpeta="imagenes";
-    $nombreArchivo = uniqid(rand(), true). ".jpeg";
 
-    var_dump($archivo);
-
-    if(!is_dir($carpeta)){
-        mkdir($carpeta);}
-
-    move_uploaded_file($archivo['tmp_name'], $carpeta."/".$nombreArchivo);
-
-    $peticionInsertar = "INSERT INTO proveedores (direccion, telefono, correo, numero, concepto, tipo_entrega)
-    VALUES ('$direccion','$telefono','$correo','$numero','$concepto','$tipo_entrega')";
+    $peticionInsertar = "INSERT INTO proveedores (direccion, telefono, correo, numero, concepto, nombre_beneficiario, fecha_expiracion)
+    VALUES ('$direccion','$telefono','$correo','$numero','$concepto', '$nombre_beneficiario','$fecha_expiracion')";
 
 if (mysqli_query($conexion, $peticionInsertar)) {
     echo "ACTUALIZACION COMPLETA";
-    header("location: ../MENSAJES/exitoso.html");
+    header("location: MENSAJES/exitoso.html");
     
     exit(); 
 } else {
@@ -77,7 +67,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
     </header>
 
 
-    <br><a class=principal-btn  href="../../AdminProductos/administracion.html">Regresar</a>
+    <br><a class=principal-btn  href="../indexproveedor.html">Regresar</a>
 <div class="box-container"><h1> Datos de Pago</h1></div> <br>
 
     <?php foreach ($errores as $error): ?>
@@ -86,7 +76,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
 
     <h2 style="transform: translate(18%, 40%); font-size: 25px;;" >En esta sección podrás agregar los datos </h2><br>
 
-    <div ><form  action="datosdepago.php" style="transform: translate(30%,10%); font-size: 25px;;"
+    <div ><form  action="datospago.php" style="transform: translate(30%,10%); font-size: 25px;;"
      method="POST" enctype="multipart/form-data">
 
 
@@ -108,7 +98,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
      <h6> Estos datos serán visualizados por el cliente</h6>
 
         <label for="">Numero de tarjeta</label>
-        <input type="int" name="numero_tarjeta" placeholder="Ingresa el numero de tu tajeta" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;">
+        <input type="int" name="numero" placeholder="Ingresa el numero de tu tajeta" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;">
         <br></br>   
 
         <label for=""> Concepto para pago</label>
@@ -130,6 +120,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
 </div>
 
 <br>
+<h4>.<h4>
 
 <div style="overflow: hidden; gap: 25px;">
   <div> <img src="../../images/orgatito2.png" alt="ORGATITO Logo" style="width: 500px; transform: translateX(100%);"></div>
