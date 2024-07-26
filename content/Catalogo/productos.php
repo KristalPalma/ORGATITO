@@ -33,12 +33,12 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Producto</title>
-    <link rel="stylesheet" href="../../styles/catalogo.css">
+    <link rel="stylesheet" href="../../styles/vista.css">
 </head>
 <body>
     <?php if ($product): ?>
         <div class="detalle-producto">
-            <img src="<?php echo $product['imagen']; ?>" alt="<?php echo htmlspecialchars($product['nombre']); ?>" />
+            <img src="../AdminProductos/CRUDPROV/imagenes/.<?php echo $product['imagen']; ?>" alt="<?php echo htmlspecialchars($product['nombre']); ?>" />
             <div class="info-producto">
                 <h1><?php echo htmlspecialchars($product['nombre']); ?></h1>
                 <p>Categoría: <?php echo htmlspecialchars($product['categoria']); ?></p>

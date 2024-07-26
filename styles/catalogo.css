@@ -1,7 +1,7 @@
 /* css del catalogo*/
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "lucida console";
     background-color: #C5FBAD;
     margin: 0;
     padding: 0;
@@ -32,6 +32,7 @@ body {
     padding-bottom: 5px;
     border-bottom: 2px solid #000;
 }
+
 #catalogo {
     display: flex;
     flex-wrap: wrap;
@@ -41,18 +42,18 @@ body {
     box-sizing: border-box;
 }
 .producto {
-    border: 1px solid #ddd;
+    border: 1px solid #be3838;
     border-radius: 5px;
     margin: 10px 0;
     padding: 10px;
-    background-color: #fff;
     width: 300px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     flex: 1 1 calc(25% - 20px); /* Calcula el ancho para permitir 4 elementos por fila */
-    box-sizing: border-box; /* Incluye el padding y border en el cálculo del ancho */
+    max-width: calc(25% - 20px);
     margin-bottom: 20px; /* Espacio entre filas */
-}
+    }
+
 .producto img {
     max-width: 100%;
     height: auto;
