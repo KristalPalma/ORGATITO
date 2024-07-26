@@ -17,7 +17,7 @@ $stmt->bind_param("i", $id);
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Verificar si se encontró el producto
+// Verificar si se encontró el productooooo
 $product = null;
 if ($result->num_rows > 0) {
     $product = $result->fetch_assoc();
