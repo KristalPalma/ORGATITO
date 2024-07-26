@@ -7,13 +7,16 @@ $conexion= $con;
 $errores = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nombre = $_POST['nombre'];
-    $categoria	 = $_POST['categoria'];
-    $cantidad = $_POST['cantidad'];
-    $precio_kilo = $_POST['precio_kilo'];
-    //$imagen = $_POST['imagen'];
-    $archivo=$_FILES['archivo'];
-    $tipo_entrega = $_POST['tipo_entrega'];
+    $direccion = $_POST['direccion'];
+    $telefono	 = $_POST['telefono'];
+    $correo = $_POST['correo'];
+    $numero = $_POST['numero'];
+    $concepto = $_POST['concepto'];
+    $numero = $_POST['numero'];
+    $concepto = $_POST['concepto'];
+    $mesAnio = $_POST['mes-anio'];
+
+    $fecha = $mesAnio . '-01';
 
     $carpeta="imagenes";
     $nombreArchivo = uniqid(rand(), true). ".jpeg";
@@ -25,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     move_uploaded_file($archivo['tmp_name'], $carpeta."/".$nombreArchivo);
 
-    $peticionInsertar = "INSERT INTO productos (nombre, categoria, cantidad, precio_kilo, imagen, tipo_entrega)
-    VALUES ('$nombre','$categoria','$cantidad','$precio_kilo','$nombreArchivo','$tipo_entrega')";
+    $peticionInsertar = "INSERT INTO proveedores (direccion, telefono, correo, numero, concepto, tipo_entrega)
+    VALUES ('$direccion','$telefono','$correo','$numero','$concepto','$tipo_entrega')";
 
 if (mysqli_query($conexion, $peticionInsertar)) {
     echo "ACTUALIZACION COMPLETA";
@@ -87,6 +90,8 @@ if (mysqli_query($conexion, $peticionInsertar)) {
      method="POST" enctype="multipart/form-data">
 
 
+     <h4> Datos de contacto para entrega al cliente</h4>
+     <h6> Estos datos serán visualizados por el cliente</h6>
         <label for=""> Direccion para recoger pedido</label>
         <input type="text" name="direccion" placeholder="Ingresa la direccion de local" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;">
         <br></br>
@@ -98,6 +103,9 @@ if (mysqli_query($conexion, $peticionInsertar)) {
         <label for="">Correo</label>
         <input type="email" name="correo" placeholder="Ingresa tu correo electonico" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;">
         <br></br>
+
+        <h4> Datos de tarjeta a la que depositará/trasferirá el cliente</h4>
+     <h6> Estos datos serán visualizados por el cliente</h6>
 
         <label for="">Numero de tarjeta</label>
         <input type="int" name="numero_tarjeta" placeholder="Ingresa el numero de tu tajeta" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;">
@@ -112,17 +120,8 @@ if (mysqli_query($conexion, $peticionInsertar)) {
         <br></br>
 
 
-        <label for="mes-anio">Nombre beneficiario</label>
-        <input type="text" name="nombre_beneficiario" placeholder="beneficiario en tajeta" maxlength="40" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;">
-        <br></br>
-
-        
-
-
-   
-
-        <label for="">IMAGEN</label>
-        <input type="file" name="archivo" accept="image/jpeg, image/png" style="background-color: #acf5ac">
+        <label for="mes-anio">fecha de expiración de la tarjeta</label>
+        <input type="month" name="mes-anio" placeholder="fecha de expiración" maxlength="40" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;">
         <br></br>
 
         <input type="submit" value="Envíar" style="background-color: #acf5ac; font-size:25px; border-radius:10px; transform: translate(260%, 50%) ">
