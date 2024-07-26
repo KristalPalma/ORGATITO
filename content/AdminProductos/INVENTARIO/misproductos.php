@@ -53,7 +53,7 @@
         echo '<div id="catalogo">';
         while($row = $result->fetch_assoc()) {
             echo '<div class="producto">';
-            echo '<img src="' . $row["imagen"] . '" alt="' . $row["nombre"] . '" />';
+            echo '<img src="../CRUDPROV/imagenes/' . $row["imagen"] . '" alt="' . $row["nombre"] . '" />';
             echo '<div class="detalle-producto">';
             echo '<span class="nombre">Nombre: ' . $row["nombre"] . '</span><br>';
             echo '<div class="botones">';
