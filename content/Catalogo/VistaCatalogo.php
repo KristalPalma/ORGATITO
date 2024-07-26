@@ -35,7 +35,7 @@
     <?php
     include '../conexion.php';
     $conn = $con;
-    // Verificar conexión
+    // Verificar conexiónnnnnnnnnnnn
     if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
     }
@@ -44,7 +44,7 @@
     $sql = "SELECT nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega FROM productos";
     $result = $conn->query($sql);
 
-    // Verificar si hay resultados
+    // Verificar si hay resultadosssssssss
     include '../conexion.php';
     $conn = $con;
     
