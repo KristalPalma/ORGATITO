@@ -87,7 +87,9 @@
     
     
     
-
+    // Cerrar conexión
+    $conn->close();
+    ?>
 </div>
 
 </body>

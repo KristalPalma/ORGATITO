@@ -1,0 +1,38 @@
+/* catalogo.css */
+
+/* Estilo general del body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor del producto */
+.producto-contenedor {
+    display: flex;
+    align-items: center; /* Alinea verticalmente la imagen y la información */
+    justify-content: flex-start; /* Ajusta la posición de los elementos */
+    max-width: 90%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Información del producto */
+.producto-info {
+    margin-right: 20px; /* Espacio entre la información y la imagen */
+}
+
+/* Imagen del producto */
+.producto-imagen img {
+    max-width: 300px; /* Ancho máximo de la imagen */
+    max-height: 300px; /* Altura máxima de la imagen */
+    object-fit: cover;
+    border-radius: 8px;
+}
