@@ -60,7 +60,7 @@
             echo '<span class="promocion">Promoción: ' . $row["promocion"] . '</span><br>';
             echo '<span class="tipo_de_entrega">Tipo de entrega: ' . $row["tipo_entrega"] . '</span><br>';
             echo '<div class="botones">';
-            echo '<a href="productos.php?id=' . $row["producto_id"] . '" class="ver-mas-btn">Ver más</a>';
+            echo '<a href="Detalles_del_producto.php?id=' . $row["producto_id"] . '" class="ver-mas-btn">Ver más</a>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
