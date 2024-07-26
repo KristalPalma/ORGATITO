@@ -87,9 +87,7 @@
     
     
     
-    // Cerrar conexión
-    $conn->close();
-    ?>
+
 </div>
 
 <a class=principal-btn href="/../AdminProductos/CRUDPROV/imagenes">Inicio</a>
