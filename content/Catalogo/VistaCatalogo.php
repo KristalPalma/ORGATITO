@@ -33,17 +33,6 @@
     </div>
 
     <?php
-    include '../conexion.php';
-    $conn = $con;
-    // Verificar conexiónnnnnnnnnnnn
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
-
-    // Consulta para extraer los datos de la tabla 'productos'
-    $sql = "SELECT nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega FROM productos";
-    $result = $conn->query($sql);
-
     // Verificar si hay resultadosssssssss
     include '../conexion.php';
     $conn = $con;

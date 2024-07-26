@@ -5,7 +5,7 @@
         </div>
         <nav>
             <ul>
-                <li><a class="principal-btn" href="../../content/AdminProductos/datospago.html">Datos de pago</a></li>
+                <li><a class="principal-btn" href="../../content/productos.php/carrito.php">carrito</a></li>
             </ul>
         </nav>
         <div class="container">
