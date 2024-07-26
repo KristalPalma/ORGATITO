@@ -1,4 +1,5 @@
 <?php
+session_start(); // Iniciar la sesión para usar $_SESSION
 include '../conexion.php';
 $conn = $con;
 
@@ -7,14 +8,11 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-
-
-
 // Obtener el ID del producto desde la URL
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
 // Consultar la base de datos para obtener los detalles del producto
-$sql = "SELECT nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega FROM productos WHERE producto_id = ?";
+$sql = "SELECT producto_id, nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega FROM productos WHERE producto_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
 $stmt->execute();
@@ -26,19 +24,36 @@ if ($result->num_rows > 0) {
     $product = $result->fetch_assoc();
 }
 
+// Agregar al carrito
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
+    $producto_id = $_POST['producto_id'];
+    $nombre = $_POST['nombre'];
+    $precio_kilo = $_POST['precio_kilo'];
+    $cantidad = $_POST['cantidad'];
+
+    // Verificar si el producto ya está en el carrito
+    if (isset($_SESSION['carrito'][$producto_id])) {
+        $_SESSION['carrito'][$producto_id]['cantidad'] += $cantidad;
+    } else {
+        $_SESSION['carrito'][$producto_id] = [
+            'nombre' => $nombre,
+            'precio_kilo' => $precio_kilo,
+            'cantidad' => $cantidad
+        ];
+    }
+}
+
 // Cerrar conexión
 $conn->close();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalles del Producto</title>
     <link rel="stylesheet" href="../../styles/jesus/vista.css">
-    
-
 </head>
 <body>
     <?php include "reutilizar/header.php"; ?>
@@ -54,8 +69,17 @@ $conn->close();
                     <p>Cantidad: <?php echo htmlspecialchars($product['cantidad']); ?></p>
                     <p>Precio: $<?php echo number_format($product['precio_kilo'], 2); ?>/kg</p>
                     <p class="promocion">Promoción: <?php echo htmlspecialchars($product['promocion'] ?? ''); ?></p>
-
                     <p>Tipo de entrega: <?php echo htmlspecialchars($product['tipo_entrega']); ?></p>
+                    
+                    <!-- Formulario para agregar al carrito -->
+                    <form method="POST">
+                        <input type="hidden" name="producto_id" value="<?php echo $product['producto_id']; ?>">
+                        <input type="hidden" name="nombre" value="<?php echo htmlspecialchars($product['nombre']); ?>">
+                        <input type="hidden" name="precio_kilo" value="<?php echo $product['precio_kilo']; ?>">
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" name="cantidad" id="cantidad" min="5" value="1" required>
+                        <button type="submit" name="add_to_cart">Agregar al carrito</button>
+                    </form>
                 </div>
             </div>
         <?php else: ?>

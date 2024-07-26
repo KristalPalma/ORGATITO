@@ -33,17 +33,6 @@
     </div>
 
     <?php
-    include '../conexion.php';
-    $conn = $con;
-    // Verificar conexiónnnnnnnnnnnn
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
-
-    // Consulta para extraer los datos de la tabla 'productos'
-    $sql = "SELECT nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega FROM productos";
-    $result = $conn->query($sql);
-
     // Verificar si hay resultadosssssssss
     include '../conexion.php';
     $conn = $con;
@@ -71,7 +60,7 @@
             echo '<span class="promocion">Promoción: ' . $row["promocion"] . '</span><br>';
             echo '<span class="tipo_de_entrega">Tipo de entrega: ' . $row["tipo_entrega"] . '</span><br>';
             echo '<div class="botones">';
-            echo '<a href="productos.php?id=' . $row["producto_id"] . '" class="ver-mas-btn">Ver más</a>';
+            echo '<a href="Detalles_del_producto.php?id=' . $row["producto_id"] . '" class="ver-mas-btn">Ver más</a>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
@@ -87,9 +76,7 @@
     
     
     
-    // Cerrar conexión
-    $conn->close();
-    ?>
+
 </div>
 
 <a class=principal-btn href="/../AdminProductos/CRUDPROV/imagenes">Inicio</a>
