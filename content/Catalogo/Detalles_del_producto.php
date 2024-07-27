@@ -24,11 +24,10 @@ if ($result->num_rows > 0) {
     $product = $result->fetch_assoc();
 }
 
-// Agregar al carrito
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     $producto_id = $_POST['producto_id'];
     $nombre = $_POST['nombre'];
-    $precio_kilo = $_POST['precio_kilo'];
+    $precio_kilo = isset($_POST['precio_kilo']) ? $_POST['precio_kilo'] : 0; // Asegúrate de que no sea nulo
     $cantidad = $_POST['cantidad'];
 
     // Verificar si el producto ya está en el carrito
@@ -61,25 +60,27 @@ $conn->close();
         <?php if ($product): ?>
             <div class="producto">
                 <div class="img-especifica">
-                    <img src="../AdminProductos/CRUDPROV/imagenes/<?php echo $product['imagen']; ?>" alt="<?php echo htmlspecialchars($product['nombre']); ?>" />
+                    <img src="../AdminProductos/CRUDPROV/imagenes/<?php echo htmlspecialchars($product['imagen']); ?>" alt="<?php echo htmlspecialchars($product['nombre']); ?>" />
                 </div>
                 <div class="detalle-producto">
                     <h1 class="nombre"><?php echo htmlspecialchars($product['nombre']); ?></h1>
                     <p>Categoría: <?php echo htmlspecialchars($product['categoria']); ?></p>
                     <p>Cantidad: <?php echo htmlspecialchars($product['cantidad']); ?></p>
-                    <p>Precio: $<?php echo number_format($product['precio_kilo'], 2); ?>/kg</p>
+                    <p>Precio: <?php echo isset($product['precio_kilo']) ? '$' . number_format($product['precio_kilo'], 2) : 'N/A'; ?>/kg</p>
                     <p class="promocion">Promoción: <?php echo htmlspecialchars($product['promocion'] ?? ''); ?></p>
                     <p>Tipo de entrega: <?php echo htmlspecialchars($product['tipo_entrega']); ?></p>
                     
                     <!-- Formulario para agregar al carrito -->
                     <form method="POST">
-                        <input type="hidden" name="producto_id" value="<?php echo $product['producto_id']; ?>">
-                        <input type="hidden" name="nombre" value="<?php echo htmlspecialchars($product['nombre']); ?>">
-                        <input type="hidden" name="precio_kilo" value="<?php echo $product['precio_kilo']; ?>">
-                        <label for="cantidad">Cantidad:</label>
-                        <input type="number" name="cantidad" id="cantidad" min="5" value="1" required>
-                        <button type="submit" name="add_to_cart">Agregar al carrito</button>
-                    </form>
+    <input type="hidden" name="producto_id" value="<?php echo htmlspecialchars($product['producto_id']); ?>">
+    <input type="hidden" name="nombre" value="<?php echo htmlspecialchars($product['nombre']); ?>">
+    <input type="hidden" name="precio_kilo" value="<?php echo htmlspecialchars($product['precio_kilo']); ?>">
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" name="cantidad" id="cantidad" min="1" value="1" required>
+    <button type="submit" name="add_to_cart">Agregar al carrito</button>
+</form>
+
+
                 </div>
             </div>
         <?php else: ?>

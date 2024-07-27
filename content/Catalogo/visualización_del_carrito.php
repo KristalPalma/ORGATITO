@@ -30,13 +30,14 @@ session_start();
                         <tr>
                             <td><?php echo htmlspecialchars($producto['nombre']); ?></td>
                             <td><?php 
-    $precio = $producto['precio_kilo'];
-    echo '$' . number_format($precio !== null ? $precio : 0, 2); 
-?></td>
+                               $precio = $producto['precio_kilo'];
+                                echo '$' . number_format($precio !== null ? $precio : 0, 2); 
+                            ?></td>
                             <td><?php echo $producto['cantidad']; ?></td>
                             <td><?php echo '$' . number_format($producto['precio_kilo'] * $producto['cantidad'], 2); ?></td>
                         </tr>
                         <?php $total += $producto['precio_kilo'] * $producto['cantidad']; ?>
+
                     <?php endforeach; ?>
                     <tr>
                         <td colspan="3">Total</td>
