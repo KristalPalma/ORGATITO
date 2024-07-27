@@ -40,7 +40,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Productos</title>
+    <title>Datos de pago</title>
     <link rel="stylesheet" href="../../styles/estilos.css">
 </head>
 
@@ -74,9 +74,9 @@ if (mysqli_query($conexion, $peticionInsertar)) {
         <div style="background-color: black; color: red;"><?php echo $error ?></div>
     <?php endforeach ?>
 
-    <h2 style="transform: translate(18%, 40%); font-size: 25px;;" >En esta sección podrás agregar los datos </h2><br>
+    <h2 style="transform: translate(18%, 40%); font-size: 25px;;" >En esta sección podrás agregar los datos </h2>
 
-    <div ><form  action="datospago.php" style="transform: translate(30%,10%); font-size: 25px;;"
+    <div ><form  action="datospago.php" style="transform: translate(29%,9%); font-size: 25px;;"
      method="POST" enctype="multipart/form-data">
 
 

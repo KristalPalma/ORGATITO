@@ -1,0 +1,294 @@
+
+    /*FORMA*/
+    /*𓍢ִ໋🌷¸.☆¸.♡.¸• ๑۩ BOTONES ۩๑ • ¸.☆¸.♡.¸𓍢ִ໋🌷͙֒✧*/
+
+    .principal-btn {
+        background-color: #acf5ac;   /*COLOR FINAL: BOTON PRINCIPAL*/
+        color: rgb(4, 3, 3);
+        padding: 10px;
+        border-radius: 10px; /*bordes redondos*/
+        border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        font-family: 'Lucida Console';
+        text-decoration: none;
+      }
+
+    .principal-btn:active{
+        background: #F4F7B7; /*COLOR FINAL?*/
+        transform: scale(0.10); 
+      }
+
+      .principal-btn:hover{
+        background: #8ceb88; /*COLOR FINAL? boton CURSOR*/
+      }
+    /*BOTON GRANDE*/
+    
+    .big-btn {
+      background-color: #acf5ac;   /*COLOR FINAL: BOTON PRINCIPAL*/
+      color: rgb(4, 3, 3);
+      padding: 25px 50px;
+      border-radius: 10px; /*bordes redondos*/
+      border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      font-family: 'Lucida Console';
+      text-decoration: none;
+      font-size: 25px;
+    }
+
+  .big-btn:active{
+      background: #F4F7B7; /*COLOR FINAL?*/
+      transform: scale(0.10); 
+    }
+
+    .big-btn:hover{
+      background: #8ceb88; /*COLOR FINAL? boton CURSOR*/
+    }
+
+    .container2 {
+      display: flex;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center;     /* Centra verticalmente */
+      height: 80vh;           /* Altura del contenedor (ej. toda la pantalla) */
+      gap: 20px;
+    }
+    
+    .container2 nav li {
+      margin-left: 15px; /* Spacing between nav items */
+      margin-right: 15px;
+      list-style-type: none;
+    }
+
+
+
+      /*CUERPO*/
+      body {
+        font-family: 'lucida console';
+        margin: 0;
+        padding: 0;
+        background-color: #F1EFC9;
+        color: #333; /* Text Color */
+      }
+
+ /*𓍢ִ໋🌷¸.☆¸.♡.¸• ๑۩ HEADER ۩๑ • ¸.☆¸.♡.¸𓍢ִ໋🌷͙֒✧*/
+
+
+      /* Header Styles */
+      .header {
+        background-color: #BCDFF2;
+        padding: 1px;
+        border-bottom: 3px solid black;
+        width: 100%;
+      }
+
+      .header img {
+        width: 100px; /* Adjust as needed */
+        height: auto;
+      }
+
+      .header h1 {
+        font-size: 24px; /* Adjust as needed */
+        margin-bottom: 2px;
+      }
+
+      .header {
+        font-size: 16px; /* Adjust as needed */
+        line-height: 1.5;
+      }
+
+      .container {
+        max-width: 99%;
+        margin: 0 auto;
+        padding: 1px;
+        display: flex; /* Use flexbox for positioning */
+        justify-content:stretch; /* Distribute space between logo and nav */
+        align-items: center; /* Align logo and nav vertically */
+      }
+    /* Navigation Styles */
+.container nav {
+    display: flex; /* Use flexbox for positioning nav items */
+  }
+  
+  .container nav ul {
+    list-style: none; /* Remove default bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for positioning links */
+  }
+  
+  .container nav li {
+    margin-left: 15px; /* Spacing between nav items */
+    margin-right: 15px;
+  }
+  
+  .container nav a {
+    display: block; /* Make links display as block elements */
+    padding: 10px 60px; /* Adjust padding as needed */
+    text-decoration: none;
+    color: #333; /* Link text color */
+    font-weight: bold; /* Make link text bold */
+  }
+  
+  .container nav a:hover {
+    background-color: #e8f0fe; /* Light Blue background on hover */
+    color: #337ab7; /* Primary Color on hover */
+  }
+
+  .form-container {
+    padding: 20px;          /* Espaciado interno */
+    border-radius: 8px;     /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    width: 100%;            /* Ancho máximo del formulario */
+    max-width: 500px;       /* Ancho máximo del formulario */
+    justify-content: center;
+    display: grid;
+    transform: translate(90%, 10%); /*posicion de contenedor*/
+    font-size: 25px;
+}
+
+  .form-container input {
+  margin-bottom: 10px;    /* Espacio entre campos del formulario */
+  padding: 10px;          /* Espaciado interno de los campos */
+  width: 80%;            /* Ancho completo de los campos */
+  border: 1px solid #1901f0; /* Borde de los campos */
+  border-radius: 4px;     /* Bordes redondeados de los campos */
+  color: #6a90d2;
+}
+
+.form-container label {
+  margin-right: 10px; /* Espacio entre el label y el input */
+  width: 10px; /* Ajusta el ancho del label según sea necesario */
+}
+
+
+
+.input{
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #94f1a6; /* Color de fondo del input */
+    transition: border-color 0.3s;
+}
+
+
+
+
+
+
+ /*𓍢ִ໋🌷¸.☆¸.♡.¸• ๑۩ TEXTO ۩๑ • ¸.☆¸.♡.¸𓍢ִ໋🌷͙֒✧*/
+  h1{
+    color:#000;
+    font-family:'lucida console';
+  }
+
+.box-container {
+    background-color: #F4B8E9; /* Fondo rosa */
+    padding: 6px 300px; /* Espacio interior */
+    border: 2px solid #000000; /* Borde sólido rosa oscuro */
+    border-radius: 30px; /* Bordes redondeados */
+    width: fit-content; /* Ancho ajustado al contenido */
+    margin: 20px auto; /* Centrado horizontalmente con margen superior e inferior */
+    text-align: center; /* Centrar texto */
+}
+.box-container2 {
+    background-color: #a7e298; /* Fondo rosa */
+    padding: 100px 200px; /* Espacio interior */
+    border: 2px solid #000000; /* Borde sólido rosa oscuro */
+    border-radius: 30px; /* Bordes redondeados */
+    width: fit-content; /* Ancho ajustado al contenido */
+    margin: 20px auto; /* Centrado horizontalmente con margen superior e inferior */
+    text-align: center; /* Centrar texto */
+    transform: translate(0%, 50%);
+    font-size: 40px;
+}
+
+
+
+.centered-textt{
+  position: absolute; /* Posiciona el texto absolutamente */
+  top: 40%; /* Coloca el texto en la mitad de la altura */
+  left: 45%; /* Coloca el texto en la mitad del ancho */
+  right: .1%;
+  transform: translate(-40%, -40%); /* Ajusta para centrar el texto */
+  font-size: 24px;
+  color: #000000;
+  text-align: center;
+}  
+
+.centered-text {
+    position: absolute; /* Posiciona el texto absolutamente */
+    top: 60%; /* Coloca el texto en la mitad de la altura */
+    left: 45%; /* Coloca el texto en la mitad del ancho */
+    right: .1%;
+    transform: translate(-40%, -100%); /* Ajusta para centrar el texto */
+    font-size: 24px;
+    color: #000000;
+    text-align: center;
+}   
+
+.container-center-text {
+
+  position: absolute; /* Centra horizontalmente */
+  height: 20vh;           /* Altura del contenedor (toda la pantalla) */
+  margin: 0;               /* Elimina el margen por defecto del body */
+  left: 10%;
+}
+.producto {
+    border: 1px solid #be3838;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px; /* Espacio entre filas */
+    justify-content: center;
+    display: flex;
+    }
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.detalle-producto {
+    text-align: left;
+    padding: 20px;
+}
+.nombre {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+.precio {
+    color: #1c4c0a;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+}
+.promocion {
+    color: #ff0000;
+    display: inline-block;
+}
+/* Definir el tamaño específico de la imagen */
+.img-especifica {
+  width: 400px; /* Ancho específico */
+  height: 400px; /* Alto específico */
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+  border-radius: 10px; /* Opcional: Bordes redondeados */
+  border: 5px solid rgb(255, 0, 204);
+  border-image-width: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Opcional: Sombra */
+}
+
+.img-gato {
+    width: 400px; /* Ancho específico */
+    height: 400px; /* Alto específico */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    border-radius: 10px; /* Opcional: Bordes redondeados */
+    border: 5px solid rgb(255, 0, 204);
+    border-image-width: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Opcional: Sombra */
+  }
+
+

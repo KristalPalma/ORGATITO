@@ -1,3 +1,5 @@
+COPIA DE MIS PRODUCTOS SIN modificar
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -66,7 +68,7 @@
             echo '<a href="prov1prod.php?id=' . $row["producto_id"] . '" class="ver-mas-btn">Vista previa catalogo</a>';
             echo '</div>';
             echo '</div>';
-            echo '<a href="../CRUDPROV/vistamodificar.php?id=' . $row["producto_id"] . '">Editar</a>';;
+            echo '<td> <a href="../CRUDPROV/vistamodificar.php?id= . <?php echo $id = $row["producto_id"]; ?>" >Editar</a> </td>';
             echo '<td>  <a href="eliminar.php?id=<?php echo $id = $row["id"]; ?>" >Eliminar</a> </td>';
             echo '</div>';
         }
@@ -80,10 +82,6 @@
     ?>
     
 </div>
-
-
-
-
 
 </body>
 </html>

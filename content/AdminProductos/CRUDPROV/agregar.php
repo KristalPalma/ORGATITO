@@ -53,6 +53,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
 
 <body>
 
+<!-- SECCION SUPERIOR DE NAVEGACIÓN  -->
 <header :root class="header">
         <div class="container">
           <div class="logo">
@@ -63,7 +64,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
                   <li><a class=principal-btn href="../../indexproveedor.html">Inicio</a></li>
                   <li><a class=principal-btn href="../administracion.html">Administración de productos</a></li>
                   <li><a class=principal-btn href="../../content/AdminProductos/inventario.html">Inventario</a></li>
-                  <li><a class=principal-btn href="../../content/AdminProductos/datospago.html">Datos de pago</a></li>
+                  <li><a class=principal-btn href="../../AdminProductos/datospago.php">Datos de pago</a></li>
               </ul>
           </nav>
           <div class="container">
@@ -72,9 +73,10 @@ if (mysqli_query($conexion, $peticionInsertar)) {
             </div> 
         </div>
     </header>
-
-
     <br><a class=principal-btn  href="../../AdminProductos/administracion.html">Regresar</a>
+    
+<!-- SECCION SUPERIOR DE NAVEGACIÓN  -->
+
 <div class="box-container"><h1>  Agregar productos </h1></div> <br>
 
     <?php foreach ($errores as $error): ?>
