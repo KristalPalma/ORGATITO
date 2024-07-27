@@ -60,12 +60,14 @@ if ($result->num_rows > 0) {
 
 <div class="box-container"><h1>  Agregar productos </h1></div> <br>
 
-    <h2 style="transform: translate(18%, 40%); font-size: 25px;;" >En esta sección podrás agregar los detalles de un nuevo producto.</h2><br>
+    <h2 style="transform: translate(18%, 40%); font-size: 25px;;" >En esta sección podrás modificar los detalles de venta de tu producto.</h2><br>
 
     <div ><form  action="modificar.php" style="transform: translate(30%,10%); font-size: 25px;;"
      method="GET" enctype="multipart/form-data">
 
 
+     <h2 class="nombre"><?php echo htmlspecialchars($product['nombre']); ?></h2>
+     <br></br>
 
         <label for="">Tipo</label>
         <select style="background-color: #acf5ac; border-radius: 4px; width: 15%; font-size: 25px;" name="categoria">
@@ -74,11 +76,6 @@ if ($result->num_rows > 0) {
         <option value="<?php echo htmlspecialchars($product['categoria']); ?>" <?php echo !in_array($product['categoria'], ['Verdura', 'Fruta']) ? 'selected' : ''; ?>><?php echo htmlspecialchars($product['categoria']); ?></option>
         </select>
         <br><br>    
-
-        <label for="">NOMBRE DEL PRODUCTO</label>
-        <input value="<?php echo htmlspecialchars($product['nombre']); ?>" 
-        type="text" name="nombre" placeholder="Nombre de tu producto" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;">
-        <br></br>
 
         <label for="">CANTIDAD</label>
         <input value="<?php echo htmlspecialchars($product['cantidad']); ?>" 
@@ -95,10 +92,6 @@ if ($result->num_rows > 0) {
         <option value="Local" <?php echo ($product['tipo_entrega'] == 'Local') ? 'selected' : ''; ?>>Local</option>
         <option value="Domicilio" <?php echo ($product['tipo_entrega'] == 'Domicilio') ? 'selected' : ''; ?>>Domicilio</option>
         </select>
-        <br></br>
-
-        <label for="">IMAGEN</label>
-        <input type="file" name="archivo" accept="image/jpeg, image/png" style="background-color: #acf5ac">
         <br></br>
 
 
