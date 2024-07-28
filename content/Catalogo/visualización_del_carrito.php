@@ -59,9 +59,14 @@ if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['id']))
                     </tr>
                 </tbody>
             </table>
-
+            <?php
+            // Número de teléfono en formato internacional sin el símbolo "+"
+            $telefono = '9848060908'; // Reemplazar con el número de WhatsApp real
+            $mensaje = urlencode("Hola, me gustaría proceder con el pago de mi carrito. Mi total es de $" . number_format($total, 2));
+            $url_whatsapp = "https://wa.me/$telefono?text=$mensaje";
+            ?>
             
-            <a href="checkout.php" class="checkout-btn">Proceder al Pago</a>
+            <a href="<?php echo $url_whatsapp; ?>" class="checkout-btn">Proceder al Pago</a>
         <?php else: ?>
             <p>No hay productos en el carrito.</p>
         <?php endif; ?>
