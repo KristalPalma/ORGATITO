@@ -1,6 +1,17 @@
 <?php
 session_start();
+
+// Manejar la eliminación de productos del carrito
+if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['id'])) {
+    $id = $_GET['id'];
+    if (isset($_SESSION['carrito'][$id])) {
+        unset($_SESSION['carrito'][$id]);
+    }
+    header("Location: visualización_del_carrito.php"); // Redirigir para evitar reenvío de formulario
+    exit();
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -37,6 +48,9 @@ session_start();
                             <td><?php echo '$' . number_format($producto['precio_kilo'] * $producto['cantidad'], 2); ?></td>
                         </tr>
                         <?php $total += $producto['precio_kilo'] * $producto['cantidad']; ?>
+                        
+                        <td><a href="visualización_del_carrito.php?action=remove&id=<?php echo $id; ?>" class="remove-btn">Eliminar</a></td> <!-- Mover el botón de eliminación aquí -->
+                        </tr>
 
                     <?php endforeach; ?>
                     <tr>
@@ -45,6 +59,8 @@ session_start();
                     </tr>
                 </tbody>
             </table>
+
+            
             <a href="checkout.php" class="checkout-btn">Proceder al Pago</a>
         <?php else: ?>
             <p>No hay productos en el carrito.</p>

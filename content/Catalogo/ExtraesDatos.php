@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 $sql = "SELECT nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega FROM productos";
 $result = $conn->query($sql);
 
-// Verificar si hay resultados
+// Verifica si hay resultados
 if ($result->num_rows > 0) {
     // Mostrar los datos en formato HTML
     echo '<div id="catalogo">';

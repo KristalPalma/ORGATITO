@@ -1,24 +1,24 @@
 <?php
-session_start(); // Iniciar la sesión para usar $_SESSION
+session_start(); // Inicia sesión para usar $_SESSION
 include '../conexion.php';
 $conn = $con;
 
-// Verificar conexión
+// Verifica conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Obtener el ID del producto desde la URL
+// Obteniene el ID del producto desde la URL
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
-// Consultar la base de datos para obtener los detalles del producto
+// Consulta la base de datos para obtener los detalles del producto
 $sql = "SELECT producto_id, nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega FROM productos WHERE producto_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Verificar si se encontró el producto
+// Verifica si se encontró el producto
 $product = null;
 if ($result->num_rows > 0) {
     $product = $result->fetch_assoc();
@@ -27,10 +27,10 @@ if ($result->num_rows > 0) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     $producto_id = $_POST['producto_id'];
     $nombre = $_POST['nombre'];
-    $precio_kilo = isset($_POST['precio_kilo']) ? $_POST['precio_kilo'] : 0; // Asegúrate de que no sea nulo
+    $precio_kilo = isset($_POST['precio_kilo']) ? $_POST['precio_kilo'] : 0; 
     $cantidad = $_POST['cantidad'];
 
-    // Verificar si el producto ya está en el carrito
+   
     if (isset($_SESSION['carrito'][$producto_id])) {
         $_SESSION['carrito'][$producto_id]['cantidad'] += $cantidad;
     } else {
