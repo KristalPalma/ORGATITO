@@ -1,12 +1,3 @@
-<?php
-session_start();
-
-// Verificar si el usuario está autenticado y es cliente
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['tipo_usuario'] !== 'cliente') {
-    header("Location: login.php");
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -41,8 +32,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION
         <h1>Selección de Productos</h1>
     </div>
 
+    <!-- Formulario de búsqueda -->
+    <form method="GET" action="">
+        <input type="text" name="search" placeholder="Buscar producto" value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+        <button type="submit">Buscar</button>
+    </form>
+
     <?php
-    // Verificar si hay resultadosssssssss
     include '../conexion.php';
     $conn = $con;
     
@@ -51,8 +47,15 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION
         die("Conexión fallida: " . $conn->connect_error);
     }
     
+    // Obtener el término de búsqueda si existe
+    $search = isset($_GET['search']) ? $conn->real_escape_string(trim($_GET['search'])) : '';
+    
     // Consulta para extraer los datos de la tabla 'productos'
+    // Incluir el término de búsqueda en la consulta si se proporcionó
     $sql = "SELECT producto_id, nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega FROM productos";
+    if (!empty($search)) {
+        $sql .= " WHERE nombre LIKE '%$search%' OR categoria LIKE '%$search%'";
+    }
     $result = $conn->query($sql);
     
     // Verificar si hay resultados
@@ -82,13 +85,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION
     // Cerrar conexión
     $conn->close();
     ?>
-    
-    
-    
-
 </div>
 
-<a class=principal-btn href="/../AdminProductos/CRUDPROV/imagenes">Inicio</a>
+<a class="principal-btn" href="/../AdminProductos/CRUDPROV/imagenes">Inicio</a>
 
 </body>
 </html>
