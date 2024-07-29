@@ -1,0 +1,5 @@
+        <label for="">PROMOCIÓN</label>
+        <input type="int" name="promocion" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;">
+        <br></br>
+
+            $promocion = $_POST['promocion'];

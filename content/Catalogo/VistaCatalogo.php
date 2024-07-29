@@ -4,107 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Productos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #C5FBAD;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-        }
-        #titulo {
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        #titulo h1 {
-            font-size: 4.5em; /* Tamaño de letra aumentado */
-            margin: 0;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #000; /* Línea negra debajo del texto */
-        }
-        #catalogo {
-            display: flex;
-            justify-content: flex-start; /* Alinea los elementos a la izquierda */
-            padding: 20px;
-            width: 100%; /* Asegura que el contenedor ocupe todo el ancho de la pantalla */
-            box-sizing: border-box;
-        }
-        .producto {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin: 10px;
-            padding: 10px;
-            background-color: #fff;
-            width: 300px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .producto img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        .detalle-producto {
-            text-align: left;
-            padding: 10px;
-        }
-        .nombre {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-        .precio {
-            color: #1b6500;
-            font-weight: bold;
-            display: inline-block;
-            margin-right: 10px;
-        }
-        .promocion {
-            color: #ff0000;
-            display: inline-block;
-        }
-        .botones {
-            margin-top: 10px;
-        }
-        .botones button {
-            background-color: #1b6500;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            margin: 0 5px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="../../styles/jesus/catalogo.css">
+    <link rel="stylesheet" href="../../styles/estilos.css">
 </head>
 <body>
-    <div id="titulo">
-        <h1>Selección de Productos</h1>
-    </div>
-    <div id="catalogo">
-        <div class="producto">
-            <img src="imagen.jpg" alt="Producto">
-            <div class="detalle-producto">
-                <span class="nombre">Nombre del Producto</span><br>
-                <span class="categoria">Categoría</span><br>
-                <span class="cantidad">Cantidad</span><br>
-                <div>
-                    <span class="precio">$9.99/kg</span>
-                    <span class="promocion">En promoción</span>
-                </div>
-                <div class="botones">
-                    <button>1 kg</button>
-                    <button>5 kg</button>
-                    <button>10 kg</button>
-                </div>
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="../../images/logo orgatito.png" alt="ORGATITO Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a class="principal-btn" href="../../content/AdminProductos/datospago.html">Datos de pago</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="logo">
+                <img src="../../images/sesionn.png" alt="sesion Logo">
             </div>
         </div>
     </div>
+</header>
+
+<div id="catalogo-container">
+    <div id="titulo">
+        <h1>Selección de Productos</h1>
+    </div>
+
+    <?php
+    // Verificar si hay resultadosssssssss
+    include '../conexion.php';
+    $conn = $con;
+    
+    // Verificar conexión
+    if ($conn->connect_error) {
+        die("Conexión fallida: " . $conn->connect_error);
+    }
+    
+    // Consulta para extraer los datos de la tabla 'productos'
+    $sql = "SELECT producto_id, nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega FROM productos";
+    $result = $conn->query($sql);
+    
+    // Verificar si hay resultados
+    if ($result->num_rows > 0) {
+        echo '<div id="catalogo">';
+        while($row = $result->fetch_assoc()) {
+            echo '<div class="producto">';
+            echo '<img src="../AdminProductos/CRUDPROV/imagenes/' . $row["imagen"] . '" alt="' . $row["nombre"] . '" />';
+            echo '<div class="detalle-producto">';
+            echo '<span class="nombre">Nombre: ' . $row["nombre"] . '</span><br>';
+            echo '<span class="categoria">Categoría: ' . $row["categoria"] . '</span><br>';
+            echo '<span class="cantidad">Cantidad: ' . $row["cantidad"] . '</span><br>';
+            echo '<span class="precio">Precio: $' . number_format($row["precio_kilo"], 2) . '/kg</span><br>';
+            echo '<span class="promocion">Promoción: ' . $row["promocion"] . '</span><br>';
+            echo '<span class="tipo_de_entrega">Tipo de entrega: ' . $row["tipo_entrega"] . '</span><br>';
+            echo '<div class="botones">';
+            echo '<a href="Detalles_del_producto.php?id=' . $row["producto_id"] . '" class="ver-mas-btn">Ver más</a>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+        }
+        echo '</div>';
+    } else {
+        echo "No se encontraron productos.";
+    }
+    
+    // Cerrar conexión
+    $conn->close();
+    ?>
+    
+    
+    
+
+</div>
+
+<a class=principal-btn href="/../AdminProductos/CRUDPROV/imagenes">Inicio</a>
+
 </body>
 </html>

@@ -104,7 +104,6 @@
         display: flex; /* Use flexbox for positioning */
         justify-content:stretch; /* Distribute space between logo and nav */
         align-items: center; /* Align logo and nav vertically */
-
       }
     /* Navigation Styles */
 .container nav {
@@ -236,5 +235,60 @@
   margin: 0;               /* Elimina el margen por defecto del body */
   left: 10%;
 }
+.producto {
+    border: 1px solid #be3838;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px; /* Espacio entre filas */
+    justify-content: center;
+    display: flex;
+    }
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.detalle-producto {
+    text-align: left;
+    padding: 20px;
+}
+.nombre {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+.precio {
+    color: #1c4c0a;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+}
+.promocion {
+    color: #ff0000;
+    display: inline-block;
+}
+/* Definir el tamaño específico de la imagen */
+.img-especifica {
+  width: 400px; /* Ancho específico */
+  height: 400px; /* Alto específico */
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+  border-radius: 10px; /* Opcional: Bordes redondeados */
+  border: 5px solid rgb(255, 0, 204);
+  border-image-width: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Opcional: Sombra */
+}
+
+.img-gato {
+    width: 400px; /* Ancho específico */
+    height: 400px; /* Alto específico */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    border-radius: 10px; /* Opcional: Bordes redondeados */
+    border: 5px solid rgb(255, 0, 204);
+    border-image-width: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Opcional: Sombra */
+  }
 
 

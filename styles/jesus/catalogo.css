@@ -1,0 +1,102 @@
+/* css del catalogo*/
+
+body {
+    font-family: "lucida console";
+    background-color: #C5FBAD;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+#catalogo-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+#titulo {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#titulo h1 {
+    font-size: 4.5em;
+    margin: 0;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #000;
+}
+
+#catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.producto {
+    border: 1px solid #be3838;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1 1 calc(25% - 20px); /* Calcula el ancho para permitir 4 elementos por fila */
+    max-width: calc(25% - 20px);
+    margin-bottom: 20px; /* Espacio entre filas */
+    }
+
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.detalle-producto {
+    text-align: left;
+    padding: 10px;
+}
+.nombre {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.precio {
+    color: #1b6500;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+}
+.promocion {
+    color: #ff0000;
+    display: inline-block;
+}
+.botones {
+    margin-top: 10px;
+}
+.botones button {
+    background-color: #1b6500;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+
+
+
+/*producto*/
+
+
+
+
+
