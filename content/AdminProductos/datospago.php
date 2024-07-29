@@ -54,9 +54,9 @@ if (mysqli_query($conexion, $peticionInsertar)) {
             <nav>
               <ul>
                   <li><a class=principal-btn href="../../indexproveedor.html">Inicio</a></li>
-                  <li><a class=principal-btn href="../administracion.html">Administración de productos</a></li>
+                  <li><a class=principal-btn href="../AdminProductos/administracion.html">Administración de productos</a></li>
                   <li><a class=principal-btn href="../../content/AdminProductos/inventario.html">Inventario</a></li>
-                  <li><a class=principal-btn href="../../content/AdminProductos/datospago.html">Datos de pago</a></li>
+                  <li><a class=principal-btn href="../AdminProductos/datospago.php">Datos de pago</a></li>
               </ul>
           </nav>
           <div class="container">
@@ -87,7 +87,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
         <br></br>
 
         <label for="">Telefono</label>
-        <input type="int" name="telefono" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;" placeholder="Ingresa tu telefono de contacto">
+        <input type="number" name="telefono" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;" placeholder="Ingresa tu telefono de contacto">
         <br></br>   
 
         <label for="">Correo</label>
@@ -98,7 +98,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
      <h6> Estos datos serán visualizados por el cliente</h6>
 
         <label for="">Numero de tarjeta</label>
-        <input type="int" name="numero" placeholder="Ingresa el numero de tu tajeta" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;">
+        <input type="number" name="numero" placeholder="Ingresa el numero de tu tajeta" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;">
         <br></br>   
 
         <label for=""> Concepto para pago</label>

@@ -14,11 +14,11 @@
     <h3>Inicia sesión</h3>
     <form action="procesar_login.php" method="post">
         <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
-        <input type="password" id="password" name="password" placeholder="Contraseña" required>
-        <select id="tipoUsuario" name="tipoUsuario" required>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+        <select id="tipo_usuario_id" name="tipo_usuario_id" required>
             <option value="">Seleccionar tipo de usuario</option>
-            <option value="cliente">Cliente</option>
-            <option value="proveedor">Proveedor</option>
+            <option value="cliente">cliente</option>
+            <option value="proveedor">proveedor</option>
           </select>          
         <div>
             <input type="checkbox" class="checkbox" id="remember" name="remember">
@@ -26,7 +26,7 @@
         </div>
         <input type="submit" value="Iniciar Sesión">
     </form>
-    <a href="recuperar_contra.html">¿Olvidaste tu contraseña?</a> | <a href="../usuario/crear_cuenta.php">Regístrate</a>
+    <a href="recuperar_contra.html">¿Olvidaste tu contraseña?</a> | <a href="crear_cuenta.php">Regístrate</a>
 </div>
 
 </body>

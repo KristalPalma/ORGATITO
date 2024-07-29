@@ -19,9 +19,9 @@
             <nav>
               <ul>
                   <li><a class=principal-btn href="../../indexproveedor.html">Inicio</a></li>
-                  <li><a class=principal-btn href="../administracion.html">Administración de productos</a></li>
+                  <li><a class=principal-btn href="../administracion.html">Administración de productos</a></li><br>
                   <li><a class=principal-btn href="../../content/AdminProductos/inventario.html">Inventario</a></li>
-                  <li><a class=principal-btn href="../../content/AdminProductos/datospago.html">Datos de pago</a></li>
+                  <li><a class=principal-btn href="../../AdminProductos/datospago.php">Datos de pago</a></li>
               </ul>
           </nav>
           <div class="container">
@@ -61,13 +61,17 @@
             echo '<div class="producto">';
             echo '<img src="../CRUDPROV/imagenes/' . $row["imagen"] . '" alt="' . $row["nombre"] . '" />';
             echo '<div class="detalle-producto">';
-            echo '<span class="nombre">Nombre: ' . $row["nombre"] . '</span><br>';
+            echo '<span class="cat-btn">Nombre: ' . $row["nombre"] . '</span><br>';
             echo '<div class="botones">';
-            echo '<a href="prov1prod.php?id=' . $row["producto_id"] . '" class="ver-mas-btn">Vista previa catalogo</a>';
+            echo '<br>';;
+            echo '<a href="prov1prod.php?id=' . $row["producto_id"] . '" class="catt-btn">Vista catalogo</a>';
             echo '</div>';
+            echo '<br>';;
             echo '</div>';
-            echo '<a href="../CRUDPROV/vistamodificar.php?id=' . $row["producto_id"] . '">Editar</a>';;
-            echo '<td>  <a href="eliminar.php?id=<?php echo $id = $row["id"]; ?>" >Eliminar</a> </td>';
+            echo '<a class=principal-btn href="../CRUDPROV/vistamodificar.php?id=' . $row["producto_id"] . '">Modificar</a>';;
+            echo '<a class=principal-btn href="../CRUDPROV/vistaeliminar.php?id=' . $row["producto_id"] . '">Eliminar</a><br>';;
+            echo '<br>';;
+            echo '<br><a class=cat-btn style=padding: 20px; href="../CRUDPROV/promociones/adminpro.php?id=' . $row["producto_id"] . '">....Promociones....</a>';;
             echo '</div>';
         }
         echo '</div>';

@@ -17,7 +17,7 @@ $PeticionEditar = "UPDATE productos set categoria = '$categoria', cantidad= '$ca
 
 if (mysqli_query($conexion, $PeticionEditar)) {
 echo "ACTUALIZACION COMPLETA";
-header("location:../MENSAJES/exitoso.html");
+header("location:../MENSAJES/Actualizacion.html");
 
 exit(); 
 } else {
