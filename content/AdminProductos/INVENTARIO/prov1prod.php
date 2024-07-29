@@ -67,9 +67,6 @@ $conn->close();
     <br><a class=principal-btn  href="../../../content/AdminProductos/INVENTARIO/misproductos.php">Regresar</a>
 <!-- FINAL DE LA SECCION SUPERIOR DE NAVEGACIÓN  -->
 
-
-
-
     <div id="catalogo-container">
         <?php if ($product): ?>
             <div class="producto">
@@ -83,7 +80,6 @@ $conn->close();
                     <p>Cantidad: <?php echo htmlspecialchars($product['cantidad']); ?></p>
                     <p>Precio: $<?php echo number_format($product['precio_kilo'], 2); ?>/kg</p>
                     <p class="promocion">Promoción: <?php echo htmlspecialchars($product['promocion'] ?? ''); ?></p>
-
                     <p>Tipo de entrega: <?php echo htmlspecialchars($product['tipo_entrega']); ?></p>
                 </div>
             </div>

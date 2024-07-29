@@ -92,3 +92,14 @@ body {
 }
 
 
+.option-btn {
+    background-color: #acf5ac;   /*COLOR FINAL: BOTON PRINCIPAL*/
+    color: rgb(4, 3, 3);
+    padding: 10px;
+    border-radius: 10px; /*bordes redondos*/
+    border: 2px solid #000; /* Borde color negro y de 1 píxel de grosor */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    font-family: 'Lucida Console';
+    text-decoration: none;
+  }
