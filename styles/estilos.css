@@ -103,6 +103,7 @@
         display: flex; /* Use flexbox for positioning */
         justify-content:stretch; /* Distribute space between logo and nav */
         align-items: center; /* Align logo and nav vertically */
+
       }
     /* Navigation Styles */
 .container nav {

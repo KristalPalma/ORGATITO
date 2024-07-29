@@ -5,7 +5,7 @@ session_start();
 // Crear una cookie
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['crear'])) {
     $nombre_cookie = "usuario";
-    $valor_cookie = $_POST['nombre_usuario'];
+    $valor_cookie = $_POST['usuario'];
     $tiempo_expiracion = time() + (30 * 24 * 60 * 60); // 30 días desde ahora
     setcookie($nombre_cookie, $valor_cookie, $tiempo_expiracion, "/");
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['eliminar'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,12 +38,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['eliminar'])) {
 <h2>Gestión de Cookies</h2>
 
 <form action="gestionar_cookies.php" method="post">
-    <label for="nombre_usuario">Nombre de usuario:</label>
-    <input type="text" id="nombre_usuario" name="nombre_usuario" required>
+    <label for="usuario">Nombre de usuario:</label>
+    <input type="text" id="usuario" name="usuario" required>
     <button type="submit" name="crear">Crear Cookie</button>
 </form>
 
-<form action="gestionar_cookies.php" method="post">
+<form action="cookies.php" method="post">
     <button type="submit" name="eliminar">Eliminar Cookie</button>
 </form>
 

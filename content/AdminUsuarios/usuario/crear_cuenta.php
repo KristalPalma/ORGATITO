@@ -66,11 +66,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Ejecutar la consulta
     if (mysqli_stmt_execute($stmt)) {
       // Redireccionar a la página de éxito
+      echo "<script>alert('¡Te has registrado correctamente! Por favor, inicia sesión.');</script>";
       header('Location: registro_exitoso.html');
       exit();
     } else {
       // En caso de error, mostrar un mensaje
       echo "Error al registrar el usuario: " . mysqli_error($con);
+      header('Location: registro_fallido.html');
     }
 
     mysqli_stmt_close($stmt);
@@ -113,6 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <option value="2">proveedor</option>
         <!-- Agrega más opciones según los tipos de usuario que tengas -->
     </select>
+    <div id="registro_fallido"></div>
 
     <input type="submit" value="Registrarse">
   </form>

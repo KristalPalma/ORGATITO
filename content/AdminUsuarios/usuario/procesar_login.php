@@ -13,7 +13,7 @@ require_once 'usuariosbd.php';
  
 // Define variables and initialize with empty values
 $usuario = $contrasena = "";
-$usuario_error = $contrasena_error = $login_err = "";
+$usuario_error = $contrasena_error = $login_error = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -79,12 +79,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             header("location: index.php");
                         } else{
                             // Password is not valid, display a generic error message
-                            $login_err = "Nombre o Contraseña inválidos.";
+                            $login_error = "Nombre o Contraseña inválidos.";
                         }
                     }
                 } else{
                     // Username doesn't exist, display a generic error message
-                    $login_err = "Nombre o Contraseña inválidos.";
+                    $login_error = "Nombre o Contraseña inválidos.";
                 }
             } else{
                 echo "¡Lo siento! Algo salió mal, intentélo de nuevo más tarde.";
@@ -96,7 +96,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Close connection
-    mysqli_close($con);
+    mysqli_close($link);
 }
 ?>
 <!DOCTYPE html>
