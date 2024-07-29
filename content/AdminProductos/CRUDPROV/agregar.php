@@ -100,7 +100,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
         <br></br>
 
         <label for="">CANTIDAD</label>
-        <input type="int" name="cantidad" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;" placeholder="Cantidad de tu producto en kilos">
+        <input type="number" name="cantidad" style="background-color: #acf5ac; border-radius: 10px; width: 25%; font-size: 25px;" placeholder="Cantidad de tu producto en kilos">
         <br></br>   
 
         <label for="">PRECIO</label>
