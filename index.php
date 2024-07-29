@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+ var_dump($_SESSION);
+if (empty($_SESSION )){
+  echo "no hay sesión";
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,9 +30,10 @@
         <nav class="nav-gato">
           <ul >
             <li><a class=principal-btn href="content/Catalogo/VistaCatalogo.php">Ver catálogo</a></li>
-            <li><a class=principal-btn href="content/AdminUsuarios/usuario/login.html">Iniciar sesión</a></li>
+            <li><a class=principal-btn href="content/AdminUsuarios/usuario/login.php">Iniciar sesión</a></li>
           </ul>
         </nav>
+        <a href="cerrar_sesion.php">cerrar sesión </a>
 </header>
 
     <div class="box-container"><h2>Experimenta el verdadero sabor de la frescura.</h2></div>

@@ -1,3 +1,10 @@
+<?php
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: ../../../index.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
         <link rel="stylesheet" href="../../../styles/login.css">
-        <a href="../../../index.html">Regresar</a>
+        <a href="../../../index.php">Regresar</a>
 </head>
 <body>
 
 <div class="login-container">
     <h2>ORGATITO </h2>
     <h3>Inicia sesión</h3>
-    <form action="procesar_login.php" method="post">
+    <form action="procesar_login.php" method="POST">
         <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
         <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
         <select id="tipo_usuario_id" name="tipo_usuario_id" required>

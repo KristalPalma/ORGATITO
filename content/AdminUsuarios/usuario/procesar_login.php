@@ -1,12 +1,14 @@
 <?php
 // Initialize the session
+
+require "../../conexion.php";
 session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: ../../../index.html");
-    exit;
-}
+#if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+#    header("location: ../../../index.php");
+    #exit;
+#}
  
 // Include config file
 require_once 'usuariosbd.php';
@@ -35,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($usuario_error) && empty($contrasena_error)){
         // Prepare a select statement
-        $sql = "SELECT usuario, contrasena FROM usuarios WHERE usuario = ?";
+        $sql = "SELECT usuario_id, usuario, contrasena FROM usuarios WHERE usuario = ?";
         
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -52,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $usuario, $hashed_password);
+                    mysqli_stmt_bind_result($stmt, $id, $usuario, $hashed_password);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($contrasena, $hashed_password)){
                             // Password is correct, so start a new session
@@ -74,9 +76,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["usuario"] = $usuario;                            
-                            
+                            $_SESSION["tipo_usuario_id"] = $_POST["tipo_usuario_id"];
                             // Redirect user to welcome page
-                            header("location: index.php");
+                            require_once("../../cookies.php");
+                            redirectToPanel();
+                            exit;
                         } else{
                             // Password is not valid, display a generic error message
                             $login_error = "Nombre o Contraseña inválidos.";
@@ -106,16 +110,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
         <link rel="stylesheet" href="../../../styles/login.css">
-        <a href="../../../index.html">Regresar</a>
+        <a href="../../../index.php">Regresar</a>
 </head>
 <body>
 
 <div class="login-container">
     <h2>ORGATITO </h2>
     <h3>Inicia sesión</h3>
-    <form action="procesar_login.php" method="post">
+    <form action="procesar_login.php" method="POST">
         <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
-        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        <input type="password" id="password" name="contrasena" placeholder="Contraseña" required>
         <select id="tipoUsuario" name="tipoUsuario" required>
             <option value="">Seleccionar tipo de usuario</option>
             <option value="cliente">Cliente</option>

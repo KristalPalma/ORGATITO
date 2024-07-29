@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Verificar si el usuario está autenticado y es cliente
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['tipo_usuario_id'] !== 'proveedor') {
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +25,7 @@
           </div>
             <nav>
               <ul>
-                  <li><a class=principal-btn href="../content/indexproveedor.html">Inicio</a></li>
+                  <li><a class=principal-btn href="../content/indexproveedor.php">Inicio</a></li>
                   <li><a class=principal-btn href="../content/AdminProductos/administracion.html">Administración de productos</a></li>
                   <li><a class=principal-btn href="../content/AdminProductos/inventario.html">Inventario</a></li>
                   <li><a class=principal-btn href="../content/AdminProductos/datospago.php">Datos de pago</a></li>
@@ -29,7 +38,7 @@
         </div>
     </header>
 
-    <br><a class=principal-btn href="../index.html">Regresar</a></br>
+    <br><a class=principal-btn href="../index.php">Regresar</a></br>
 
     <div class="box-container"><h1> ¡Bienvenido Proveedor! </h1></div>
 
