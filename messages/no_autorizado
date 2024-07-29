@@ -1,0 +1,13 @@
+<?
+function verificar_acceso($tipo_usuario_requerido) {
+    if (!isset($_SESSION['tipo_usuario_id'])) {
+        header('Location: login.php');
+        exit();
+    }
+
+    if ($_SESSION['tipo_usuario_id'] !== $tipo_usuario_requerido) {
+        // Mostrar mensaje de error o redirigir a una página de acceso no autorizado
+        header('Location: ORGATITO/messages/no_autorizado');
+        exit();
+    }
+}

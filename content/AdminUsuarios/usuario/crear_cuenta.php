@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $correo = trim($_POST['correo']);
   $telefono = trim($_POST['telefono']);
   $contrasena = trim($_POST['contrasena']);
-  $tipo_usuario_id = $_POST['tipo_usuario_id']; 
+  $tipo_usuario_id = trim($_POST['tipo_usuario_id']); 
 
   // Validar el nombre de usuario
   if (empty($usuario)) {
@@ -53,6 +53,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errores[] = 'Por favor, ingrese un número de teléfono.';
   }
 
+  // Validar el tipo de usuario
+
+  if (empty($tipo_usuario_id)) {
+    $errores[] = 'Por favor, selecciona un tipo de usuario.';
+} elseif ($tipo_usuario_id !== 'cliente' && $tipo_usuario_id !== 'proveedor') {
+  $errores[] = 'El tipo de usuario seleccionado no es válido.';
+}
+
+
   // Si no hay errores, registrar al usuario
   if (empty($errores)) {
     // Hash la contraseña
@@ -61,16 +70,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Preparar la consulta para registrar al usuario
     $sql = "INSERT INTO usuarios (usuario, correo, telefono, contrasena, tipo_usuario_id, fecha_registro) VALUES (?, ?, ?, ?, ?, NOW())";
     $stmt = mysqli_prepare($con, $sql);
-    mysqli_stmt_bind_param($stmt, "ssssi", $usuario, $correo, $telefono, $contrasenaHash, $tipo_usuario_id);
+    mysqli_stmt_bind_param($stmt, "sssss", $usuario, $correo, $telefono, $contrasenaHash, $tipo_usuario_id);
 
     // Ejecutar la consulta
     if (mysqli_stmt_execute($stmt)) {
       // Redireccionar a la página de éxito
-      header('Location: registro_exitoso.html');
+      echo "¡Te has registrado correctamente! Por favor, inicia sesión.";
+      header('Location: ../../../messages/registro_exitoso.html');
       exit();
     } else {
       // En caso de error, mostrar un mensaje
       echo "Error al registrar el usuario: " . mysqli_error($con);
+      header('Location: registro_fallido.html');
     }
 
     mysqli_stmt_close($stmt);
@@ -109,14 +120,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <label for="tipo_usuario_id">Selecciona tipo de usuario:</label>
     <select id="tipo_usuario_id" name="tipo_usuario_id" required>
-        <option value="1">cliente</option>
-        <option value="2">proveedor</option>
+        <option value="cliente">cliente</option>
+        <option value="proveedor">proveedor</option>
         <!-- Agrega más opciones según los tipos de usuario que tengas -->
     </select>
+    <div id="registro_fallido"></div>
 
     <input type="submit" value="Registrarse">
   </form>
-  <a href="inicio_sesion.html">¿Ya tienes una cuenta? Inicia sesión aquí</a>
+  <a href="login.html">¿Ya tienes una cuenta? Inicia sesión aquí</a>
 </div>
 
 </body>
