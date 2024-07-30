@@ -16,8 +16,10 @@ if (empty($_SESSION )){
     <title>ORGATITO</title>
 
     <link rel="stylesheet" href="styles/estilos.css">
-
     <link rel="stylesheet" href="styles/global.css">
+
+
+
 
 </head>
 <body>
@@ -26,22 +28,22 @@ if (empty($_SESSION )){
     <div class="container">
         <a href="index.php" class='logo' ><img src="images/logo orgatito.png" alt="Orgatito Logo" width="50px"></a>
 
-        <nav class="nav-gato">
+        <nav class="nav_gato">
           <ul >
-          <?php if(isset($_SESSION["loggedin"])) {
+          <?php 
+          if(isset($_SESSION["loggedin"])) {
             echo "<a href='content/AdminUsuarios/usuario/editar_perfil.php' class='active'>" . htmlspecialchars($_SESSION["usuario"]) . '</a>';
-            echo "<a href='cerrar_sesion.php' class='btn btn-danger ml-1'>Cerrar Sesión </a>"; }
-        else { echo "<a href='content/AdminUsuarios/usuario/login.php' class='active'> Iniciar Sesion </a>"; 
-        
-        
-        } ?>
+            echo "<a href='cerrar_sesion.php' class='principal-btn'>Cerrar Sesión </a>"; 
+            echo "<a href='content/Catalogo/VistaCatalogo.php' class='principal-btn'>Catálogo </a>";
+          } else {
+            echo "<a href='content/AdminUsuarios/usuario/login.php' class='active'> Iniciar Sesion </a>"; 
+          } 
+          ?>
         
           </ul>
         </nav>
         <div class="container">
-            <div class="logo">
-                <img src="images/sesionn.png" alt="sesion Logo">
-            </div>
+            
         </div>
 </header>
 

@@ -29,6 +29,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION
                   <li><a class=principal-btn href="../content/AdminProductos/administracion.html">Administración de productos</a></li>
                   <li><a class=principal-btn href="../content/AdminProductos/inventario.html">Inventario</a></li>
                   <li><a class=principal-btn href="../content/AdminProductos/datospago.php">Datos de pago</a></li>
+                  <li><a class=principal-btn href="../cerrar_sesion.php">Cerrar sesion</a></li>
+
               </ul>
           </nav>
           <div class="container">

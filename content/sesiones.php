@@ -1,5 +1,4 @@
 <?php
-// Configuración para mantener la sesión durante un día (86400 segundos)
 
 
 function checkSession() {
