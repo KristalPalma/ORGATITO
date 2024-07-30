@@ -1,0 +1,42 @@
+
+table {
+   width: 80%;
+   border: 1px solid #000;
+   background: #ffd0d0;
+   margin-left: auto;
+   margin-right: auto;
+   font-size: 20px;
+
+}
+td {
+   text-align: left;
+   vertical-align: top;
+   border: 1px solid #000;
+   border-collapse: collapse;
+   padding: 0.3em;
+}
+
+th{
+    background: rgb(171, 232, 170);
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+ }
+
+ thead th {
+    background-color: #4CAF50; /* Cambia este color al que desees */
+    color: white;}
+
+.form-container {
+    padding: 0px 230px;
+    }
+
+.center-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }

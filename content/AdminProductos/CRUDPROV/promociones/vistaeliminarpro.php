@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
                   <li><a class=principal-btn href="../../indexproveedor.html">Inicio</a></li>
                   <li><a class=principal-btn href="../administracion.html">Administración de productos</a></li>
                   <li><a class=principal-btn href="../../content/AdminProductos/inventario.html">Inventario</a></li>
-                  <li><a class=principal-btn href="../../AdminProductos/datospago.php">Datos de pago</a></li>
+                  <li><a class=principal-btn href="../../AdminProductos/DatosPago.html">Datos de pago</a></li>
               </ul>
           </nav>
           <div class="container">
