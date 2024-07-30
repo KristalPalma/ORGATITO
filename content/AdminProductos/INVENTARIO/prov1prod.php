@@ -51,7 +51,7 @@ $conn->close();
           </div>
             <nav>
               <ul>
-                  <li><a class=principal-btn href="../../indexproveedor.html">Inicio</a></li>
+                  <li><a class=principal-btn href="../../indexproveedor.php">Inicio</a></li>
                   <li><a class=principal-btn href="../administracion.html">Administración de productos</a></li>
                   <li><a class=principal-btn href="../../content/AdminProductos/inventario.html">Inventario</a></li>
                   <li><a class=principal-btn href="../../content/AdminProductos/datospago.html">Datos de pago</a></li>
@@ -77,7 +77,7 @@ $conn->close();
                 <div class="detalle-producto">
                     <h1 class="nombre"><?php echo htmlspecialchars($product['nombre']); ?></h1>
                     <p>Categoría: <?php echo htmlspecialchars($product['categoria']); ?></p>
-                    <p>Cantidad: <?php echo htmlspecialchars($product['cantidad']); ?></p>
+                    <p>Cantidad: <?php echo htmlspecialchars($product['cantidad']); ?>/kg</p>
                     <p>Precio: $<?php echo number_format($product['precio_kilo'], 2); ?>/kg</p>
                     <p class="promocion">Promoción: <?php echo htmlspecialchars($product['promocion'] ?? ''); ?></p>
                     <p>Tipo de entrega: <?php echo htmlspecialchars($product['tipo_entrega']); ?></p>

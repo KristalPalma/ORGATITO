@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Confirmar transacción
         $conexion->commit();
-        echo "Venta actualizada y cantidad de productos modificada exitosamente.";
+        header("location: http://localhost/ORGATITO/content/AdminProductos/MENSAJES/eliminadoexitosodatoventa.html");
 
     } catch (Exception $e) {
         // Revertir transacción en caso de error

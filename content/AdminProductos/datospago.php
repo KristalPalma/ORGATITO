@@ -53,7 +53,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
           </div>
             <nav>
               <ul>
-                  <li><a class=principal-btn href="../../indexproveedor.html">Inicio</a></li>
+                  <li><a class=principal-btn href="../../indexproveedor.php">Inicio</a></li>
                   <li><a class=principal-btn href="../AdminProductos/administracion.html">Administración de productos</a></li>
                   <li><a class=principal-btn href="../../content/AdminProductos/inventario.html">Inventario</a></li>
                   <li><a class=principal-btn href="../AdminProductos/DatosPago.html">Datos de pago</a></li>
@@ -67,7 +67,7 @@ if (mysqli_query($conexion, $peticionInsertar)) {
     </header>
 
 
-    <br><a class=principal-btn  href="../indexproveedor.html">Regresar</a>
+    <br><a class=principal-btn  href="../indexproveedor.php">Regresar</a>
 <div class="box-container"><h1> Datos de Pago</h1></div> <br>
 
     <?php foreach ($errores as $error): ?>
