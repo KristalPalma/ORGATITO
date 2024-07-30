@@ -21,19 +21,28 @@ if (empty($_SESSION )){
 
 </head>
 <body>
-
+    
   <header :root class="header">
     <div class="container">
-      <div class="logo">
-        <img src="images/logo orgatito.png" alt="ORGATITO Logo">
-      </div>
+        <a href="index.php" class='logo' ><img src="images/logo orgatito.png" alt="Orgatito Logo" width="50px"></a>
+
         <nav class="nav-gato">
           <ul >
-            <li><a class=principal-btn href="content/Catalogo/VistaCatalogo.php">Ver catálogo</a></li>
-            <li><a class=principal-btn href="content/AdminUsuarios/usuario/login.php">Iniciar sesión</a></li>
+          <?php if(isset($_SESSION["loggedin"])) {
+            echo "<a href='content/AdminUsuarios/usuario/editar_perfil.php' class='active'>" . htmlspecialchars($_SESSION["usuario"]) . '</a>';
+            echo "<a href='cerrar_sesion.php' class='btn btn-danger ml-1'>Cerrar Sesión </a>"; }
+        else { echo "<a href='content/AdminUsuarios/usuario/login.php' class='active'> Iniciar Sesion </a>"; 
+        
+        
+        } ?>
+        
           </ul>
         </nav>
-        <a href="cerrar_sesion.php">cerrar sesión </a>
+        <div class="container">
+            <div class="logo">
+                <img src="images/sesionn.png" alt="sesion Logo">
+            </div>
+        </div>
 </header>
 
     <div class="box-container"><h2>Experimenta el verdadero sabor de la frescura.</h2></div>

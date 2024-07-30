@@ -78,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["usuario"] = $usuario;                            
                             $_SESSION["tipo_usuario_id"] = $_POST["tipo_usuario_id"];
                             // Redirect user to welcome page
-                            require_once("../../cookies.php");
+                            require_once("../../sesiones.php");
                             redirectToPanel();
                             exit;
                         } else{
