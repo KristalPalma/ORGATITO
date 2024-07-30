@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <input type="submit" value="Registrarse">
   </form>
-  <a href="login.html">¿Ya tienes una cuenta? Inicia sesión aquí</a>
+  <a href="login.php">¿Ya tienes una cuenta? Inicia sesión aquí</a>
 </div>
 
 </body>

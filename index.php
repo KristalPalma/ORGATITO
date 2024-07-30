@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+ var_dump($_SESSION);
+if (empty($_SESSION )){
+  echo "no hay sesión";
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,23 +16,35 @@
     <title>ORGATITO</title>
 
     <link rel="stylesheet" href="styles/estilos.css">
-
     <link rel="stylesheet" href="styles/global.css">
+
+
+
 
 </head>
 <body>
-
+    
   <header :root class="header">
     <div class="container">
-      <div class="logo">
-        <img src="images/logo orgatito.png" alt="ORGATITO Logo">
-      </div>
-        <nav class="nav-gato">
+        <a href="index.php" class='logo' ><img src="images/logo orgatito.png" alt="Orgatito Logo" width="50px"></a>
+
+        <nav class="nav_gato">
           <ul >
-            <li><a class=principal-btn href="content/Catalogo/VistaCatalogo.php">Ver catálogo</a></li>
-            <li><a class=principal-btn href="content/AdminUsuarios/usuario/login.html">Iniciar sesión</a></li>
+          <?php 
+          if(isset($_SESSION["loggedin"])) {
+            echo "<a href='content/AdminUsuarios/usuario/editar_perfil.php' class='active'>" . htmlspecialchars($_SESSION["usuario"]) . '</a>';
+            echo "<a href='cerrar_sesion.php' class='principal-btn'>Cerrar Sesión </a>"; 
+            echo "<a href='content/Catalogo/VistaCatalogo.php' class='principal-btn'>Catálogo </a>";
+          } else {
+            echo "<a href='content/AdminUsuarios/usuario/login.php' class='active'> Iniciar Sesion </a>"; 
+          } 
+          ?>
+        
           </ul>
         </nav>
+        <div class="container">
+            
+        </div>
 </header>
 
     <div class="box-container"><h2>Experimenta el verdadero sabor de la frescura.</h2></div>
