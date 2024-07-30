@@ -11,6 +11,9 @@ if ($conn->connect_error) {
 // Obteniene el ID del producto desde la URL
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
+// Guardar la URL de retorno en la sesión
+$_SESSION['url_retorno'] = "Detalles_del_producto.php?id=" . $id;
+
 // Consulta la base de datos para obtener los detalles del producto
 $sql = "SELECT producto_id, nombre, categoria, cantidad, precio_kilo, imagen, promocion, tipo_entrega FROM productos WHERE producto_id = ?";
 $stmt = $conn->prepare($sql);

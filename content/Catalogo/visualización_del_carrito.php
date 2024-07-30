@@ -22,8 +22,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['id']))
     <link rel="stylesheet" href="../../styles/jesus/carrito.css">
 </head>
 <body>
+
+
     <?php include "reutilizar/header.php"; ?>
+
+
     <h1>Carrito de Compras</h1>
+    <br><a class="principal-btn" href="<?php echo isset($_SESSION['url_retorno']) ? $_SESSION['url_retorno'] : 'Detalles_del_producto.php'; ?>">Regresar</a>
     <div id="carrito">
         <?php if (!empty($_SESSION['carrito'])): ?>
             <table>
