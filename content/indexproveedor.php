@@ -52,7 +52,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION
 <div class="container2" >
     <a class=big-btn href="./AdminProductos/administracion.html"> Administración de productos</a>
     <a class=big-btn href="../content/AdminProductos/inventario.html">Inventario</a>
-    <a class=big-btn href="../content/AdminProductos/datospago.php">Datos de pago</a>
+    <a class=big-btn href="../content/AdminProductos/DatosPago.html">Datos de pago</a>
   </div>
 
 <div style="overflow: hidden; gap: 25px;">

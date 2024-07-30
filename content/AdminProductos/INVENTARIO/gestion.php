@@ -1,3 +1,10 @@
+<?php
+include '../../conexion.php';
+
+$conexion= $con;
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,7 +38,7 @@
         </div>
     </header>
 
-    <br><a class=principal-btn  href="../../../content/AdminProductos/administracion.html">Regresar</a><br>
+    <br><a class=principal-btn  href="../../../content/AdminProductos/inventario.html">Regresar</a><br>
 <!-- FINAL DE LA SECCION SUPERIOR DE NAVEGACIÓN  -->
 
 
@@ -64,14 +71,14 @@
             echo '<span class="cat-btn">Nombre: ' . $row["nombre"] . '</span><br>';
             echo '<div class="botones">';
             echo '<br>';;
-            echo '<a href="prov1prod.php?id=' . $row["producto_id"] . '" class="catt-btn">Vista catalogo</a>';
+            echo '<a href="../INVENTARIO/ventas/actividad2.php?id=' . $row["producto_id"] . '" class="catt-btn"> Ver actividad </a><br>';
             echo '</div>';
             echo '<br>';;
             echo '</div>';
-            echo '<a class=principal-btn href="../CRUDPROV/vistamodificar.php?id=' . $row["producto_id"] . '">Modificar</a>';;
-            echo '<a class=principal-btn href="../CRUDPROV/vistaeliminar.php?id=' . $row["producto_id"] . '">Eliminar</a><br>';;
+            echo '<a class=principal-btn href="../INVENTARIO/ventas/agregarV2.php?id=' . $row["producto_id"] . '">.⋆˚ Agregar venta ˚⋆.</a><br>';;
             echo '<br>';;
-            echo '<br><a class=cat-btn style=padding: 20px; href="../CRUDPROV/promociones/adminpro.php?id=' . $row["producto_id"] . '">....Promociones....</a>';;
+            echo '<br><a class=principal-btn href="../INVENTARIO/ventas/ver_cantidad_producto.php?producto_id=' . $row["producto_id"] . '">Stock actual</a>';;
+            echo '<br>';;
             echo '</div>';
         }
         echo '</div>';

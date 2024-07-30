@@ -53,10 +53,10 @@ if (mysqli_query($conexion, $peticionInsertar)) {
           </div>
             <nav>
               <ul>
-                  <li><a class=principal-btn href="../../indexproveedor.html">Inicio</a></li>
+                  <li><a class=principal-btn href="../../indexproveedor.php">Inicio</a></li>
                   <li><a class=principal-btn href="../AdminProductos/administracion.html">Administración de productos</a></li>
                   <li><a class=principal-btn href="../../content/AdminProductos/inventario.html">Inventario</a></li>
-                  <li><a class=principal-btn href="../AdminProductos/datospago.php">Datos de pago</a></li>
+                  <li><a class=principal-btn href="../AdminProductos/DatosPago.html">Datos de pago</a></li>
               </ul>
           </nav>
           <div class="container">
@@ -67,14 +67,14 @@ if (mysqli_query($conexion, $peticionInsertar)) {
     </header>
 
 
-    <br><a class=principal-btn  href="../indexproveedor.html">Regresar</a>
+    <br><a class=principal-btn  href="../indexproveedor.php">Regresar</a>
 <div class="box-container"><h1> Datos de Pago</h1></div> <br>
 
     <?php foreach ($errores as $error): ?>
         <div style="background-color: black; color: red;"><?php echo $error ?></div>
     <?php endforeach ?>
 
-    <h2 style="transform: translate(18%, 40%); font-size: 25px;;" >En esta sección podrás agregar los datos </h2>
+    <h2 style="transform: translate(18%, 40%); font-size: 25px;;" >En esta sección podrás agregar los datos de pago para un mejor control de ellos</h2>
 
     <div ><form  action="datospago.php" style="transform: translate(29%,9%); font-size: 25px;;"
      method="POST" enctype="multipart/form-data">

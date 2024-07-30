@@ -1,4 +1,6 @@
 <?php
+
+require '../../conexion.php';
 // Initialize the session
 
 require "../../conexion.php";
