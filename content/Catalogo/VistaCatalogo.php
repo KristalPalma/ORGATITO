@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Verificar si el usuario está autenticado y es cliente
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['tipo_usuario'] !== 'cliente') {
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,6 +26,8 @@
         <nav>
             <ul>
                 <li><a class="principal-btn" href="../../content/AdminProductos/datospago.html">Datos de pago</a></li>
+                <li><a class=principal-btn href="../../cerrar_sesion.php">Cerrar sesion</a></li>
+
             </ul>
         </nav>
         <div class="container">
