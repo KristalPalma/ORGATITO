@@ -83,7 +83,6 @@ $conn->close();
     <button type="submit" name="add_to_cart">Agregar al carrito</button>
 </form>
 
-
                 </div>
             </div>
         <?php else: ?>
